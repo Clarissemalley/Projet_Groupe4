@@ -1,4 +1,4 @@
-les stats d'un personnage sont données dans une liste de la forme : personnage[HP;HPmax;PA;PAmax;ATK;ACC;SPD;DEF;LCK]
+les stats d'un personnage sont données dans une liste de la forme : personnage[PV;PVmax;PA;PAmax;ATK;ACC;SPD;DEF;LCK]
 
 Dégats:
 
@@ -18,6 +18,8 @@ if touche==1:
    else:
       DGT=Def[DEF]-Att[ATK]
 
-Def[HP]=Def[HP]-DGT
+Def[PV]=Def[PV]-DGT
+
+Initiative:
 
 
