@@ -1,0 +1,23 @@
+les stats d'un personnage sont données dans une liste de la forme : personnage[HP;HPmax;PA;PAmax;ATK;ACC;SPD;DEF;LCK]
+
+Dégats:
+
+attaquant<=>Att
+défenseur<=>Def
+
+alea=radint(0, 99)
+
+touche=0
+
+if alea<=Att[ACC]:
+   touche=1
+
+if touche==1:
+   if Def[DEF]>=Att[ATK]:
+      DGT=0
+   else:
+      DGT=Def[DEF]-Att[ATK]
+
+Def[HP]=Def[HP]-DGT
+
+
