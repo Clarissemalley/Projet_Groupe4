@@ -6,7 +6,7 @@ Titre: 4rkadia
 
 Projet: Jeu vidéal style "Tactical RPG", dans le genre Emblème de Feu.
 
-Système de jeu: Un nombre réduit de personnages se battent contre une floppée de créatures inspirées de la Mythologie, le jeu se déroule sur une grille à l'image d'un jeu de plateau sur "% x %" cases.
+Système de jeu: Un nombre réduit de personnages se battent contre une floppée de créatures inspirées de la Mythologie, le jeu se déroule sur une grille à l'image d'un jeu de plateau sur "* x *" cases.
 Chaque personnages joue chacun son tour selon une statistique "Vitesse ou Initiatiuve" propre à chacun, quand un personnage commence son tour il possède un crédit de "point d'action" qui lui permet de se
 déplacer moyennant un "point d'action" par case ou d'utiliser des compétences offensives. Le but des alliés sera de vaincre le boss sur la map donnée. Pour se faire l'équipe des alliés sera composée de 4
 héros qui possèderont des compétences propres fonctionnant en synergie entre eux. Les ennemis seront placés arbitrairement sur la map et se déplaceront en ronde afin de trouver une cible. Le terrain pourra
@@ -55,7 +55,7 @@ Personnages:
 - Archer: Personnage orienté "Distance"
 	Archer[12;12;*;*;4;75;75;1;30]
 	Compétences:
-		*Flèche de chasse: Flèche normale, peu de dégats.
-		*Tir de précision: Flèche puissante, plus de dégats.
+		*Flèche de chasse: Flèche normale, peu de dégats. (* cases, ATK: 6)
+		*Tir de précision: Flèche puissante, plus de dégats. (* cases, ATK: 9)
 		*Attaque Normale: Coup de couteau sur unité adjacente. (1 case)
-		*Posture Vigilance: Attaque directement à la vue d'un ennemi. 
+		*Posture Vigilance: Attaque directement à la vue d'un ennemi. (3 cases, ATK: 5)
