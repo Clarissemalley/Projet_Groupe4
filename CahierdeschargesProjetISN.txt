@@ -4,53 +4,52 @@ Groupe 4 : Alexis Labreure, Louis Da Silva, Antoine Delage
 
 Titre: %Unknown% 
 
-Projet: Jeu vidéal style "Tactical RPG", dans le genre Emblème de Feu.
+Projet: Jeu vidÃ©al style "Tactical RPG", dans le genre EmblÃ¨me de Feu.
 
-Système de jeu: Un nombre réduit de personnages se battent contre une floppée de créatures inspirées de la Mythologie, le jeu se déroule sur une grille à l'image d'un jeu de plateau sur "% x %" cases.
-Chaque personnages joue chacun son tour selon une statistique "Vitesse ou Initiatiuve" propre à chacun, quand un personnage commence son tour il possède un crédit de "point d'action" qui lui permet de se
-déplacer moyennant un "point d'action" par case ou d'utiliser des compétences offensives. Le but des alliés sera de vaincre le boss sur la map donnée. Pour se faire l'équipe des alliés sera composée de 4
-héros qui possèderont des compétences propres fonctionnant en synergie entre eux. Les ennemis seront placés arbitrairement sur la map et se déplaceront en ronde afin de trouver une cible. Le terrain pourra
-influé sur les personnages en modifiant certaines statistiques de combat. 
+SystÃ¨me de jeu: Un nombre rÃ©duit de personnages se battent contre une floppÃ©e de crÃ©atures inspirÃ©es de la Mythologie, le jeu se dÃ©roule sur une grille Ã  l'image d'un jeu de plateau sur "% x %" cases.
+Chaque personnages joue chacun son tour selon une statistique "Vitesse ou Initiatiuve" propre Ã  chacun, quand un personnage commence son tour il possÃ¨de un crÃ©dit de "point d'action" qui lui permet de se
+dÃ©placer moyennant un "point d'action" par case ou d'utiliser des compÃ©tences offensives. Le but des alliÃ©s sera de vaincre le boss sur la map donnÃ©e. Pour se faire l'Ã©quipe des alliÃ©s sera composÃ©e de 4
+hÃ©ros qui possÃ¨deront des compÃ©tences propres fonctionnant en synergie entre eux. Les ennemis seront placÃ©s arbitrairement sur la map et se dÃ©placeront en ronde afin de trouver une cible. Le terrain pourra
+influÃ© sur les personnages en modifiant certaines statistiques de combat. 
 
 Statistiques de Combat: 
 
-Attaque   -> Fixe l'indicateur de dégats en 1 attaque.              |  (ATK)
-Précision -> Fixe les chances de toucher avec une attaque.          |  (ACC)
+Attaque   -> Fixe l'indicateur de dÃ©gats en 1 attaque.              |  (ATK)
+PrÃ©cision -> Fixe les chances de toucher avec une attaque.          |  (ACC)
 Vitesse   -> Influe sur l'odre des tours et les chances d'esquive.  |  (SPD)
-Défense   -> Fixe l'indicateur de points de dégats absorbés.        |  (DEF)
-Mobilité  -> Définit le nombre de points d'action.                  |  (PA)
-Chance    -> Définit chance de coup critique.                       |  (LCK)
+DÃ©fense   -> Fixe l'indicateur de points de dÃ©gats absorbÃ©s.        |  (DEF)
+MobilitÃ©  -> DÃ©finit le nombre de points d'action.                  |  (PA)
+Chance    -> DÃ©finit chance de coup critique.                       |  (LCK)
  
 Personnages:
 
-- Viking: Personnage orienté "Attaque" qui possède une énorme hache et un bouclier dans le dos.
+- Viking: Personnage orientÃ© "Attaque" qui possÃ¨de une Ã©norme hache et un bouclier dans le dos.
 	
-	Compétences:
-		*Charge: Fonce en ligne droite jusqu'à la case séléctionné en infligeant des dégats à l'ennemi rencontré. Le perso ne possèdera qu'1 PA au tour suivant. 
-		*Spiral Slash: Inflige des dégats à 1 case du perso sur toutes les directions.
-		*Attaque Normale: Coup de hache sur unité adjacente. (1 case)
- 	        *Posture-Défense: 
+	CompÃ©tences:
+		*Charge: Fonce en ligne droite jusqu'Ã  la case sÃ©lÃ©ctionnÃ© en infligeant des dÃ©gats Ã  l'ennemi rencontrÃ©. Le perso ne possÃ¨dera qu'1 PA au tour suivant. 
+		*Spiral Slash: Inflige des dÃ©gats Ã  1 case du perso sur toutes les directions.
+		*Attaque Normale: Coup de hache sur unitÃ© adjacente. (1 case)
+ 	        *Posture-DÃ©fense: 
 
-- Samuraï: Personnage orienté "Défense" qui possède un katana.
+- SamuraÃ¯: Personnage orientÃ© "DÃ©fense" qui possÃ¨de un katana.
 
-	Compétences:
+	CompÃ©tences:
 		*Estocade: Empale la cible et la repousse de 2 cases.
-		*
-		*Attaque Normale: Coup de katana sur unité adjacente. (1 case)
+		*Lancer de pierre: Attire l'ennemi vers sa position.
+		*Attaque Normale: Coup de katana sur unitÃ© adjacente. (1 case)
 		*Posture-Contre:
 
-- Prêteresse: Personnage orienté "Soutien"
+- PrÃªteresse: Personnage orientÃ© "Soutien"
 
-	Compétences:
-		*
-		*
-		*
-		*
+	CompÃ©tences:
+		*Soin: Soigne un alliÃ© de X PV. 
+		*Boost: Augmente l'ATK d'un alliÃ©.
+		*Attaque Normale: Coup de bÃ¢ton sur unitÃ© adjacente.(1 case)
+		*Posture-Def: Augmente la dÃ©fense des alliÃ©s dans une zone donnÃ©e.
+- Archer: Personnage orientÃ© A"Distance"
 
-- Archer: Personnage orienté "Distance"
-
-	Compétences:
-		*
-		*
-		*
-		*
+	CompÃ©tences:
+		*FlÃ¨che de chasse: FlÃ¨che normale, peu de dÃ©gats.
+		*Tir de prÃ©cision: FlÃ¨che puissante, plus de dÃ©gats.
+		*Attaque Normale: Coup de couteau sur unitÃ© adjacente. (1 case)
+		*Posture vigilance:
