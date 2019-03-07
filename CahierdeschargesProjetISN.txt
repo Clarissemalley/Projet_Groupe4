@@ -24,6 +24,7 @@ Chance    -> Définit chance de coup critique.(X1.5)                 |  (LCK)
 Personnages:
 
 - Viking: Personnage orienté "Attaque" qui possède une énorme hache et un bouclier dans le dos.
+	Viking[
 	
 	Compétences:
 		*Charge: Fonce en ligne droite jusqu'à la case séléctionné en infligeant des dégats à l'ennemi rencontré. Le perso ne possèdera qu'1 PA au tour suivant. 
