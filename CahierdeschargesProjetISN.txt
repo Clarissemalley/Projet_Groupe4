@@ -19,7 +19,7 @@ Précision -> Fixe les chances de toucher avec une attaque.          |  (ACC)
 Vitesse   -> Influe sur l'odre des tours et les chances d'esquive.  |  (SPD)
 Défense   -> Fixe l'indicateur de points de dégats absorbés.        |  (DEF)
 Mobilité  -> Définit le nombre de points d'action.                  |  (PA)
-Chance    -> Définit chance de coup critique.                       |  (LCK)
+Chance    -> Définit chance de coup critique.(X1.5)                 |  (LCK)
  
 Personnages:
 
@@ -32,7 +32,7 @@ Personnages:
  	        *Posture-Bouclier: Equipe son bouclier pour réduire les dégats subis.
 
 - Samuraï: Personnage orienté "Défense" qui possède un katana.
-
+	Samuraï[
 	Compétences:
 		*Estocade: Empale la cible et la repousse de 2 cases.
 		*Lancer de pierre: Attire l'ennemi vers sa position.
