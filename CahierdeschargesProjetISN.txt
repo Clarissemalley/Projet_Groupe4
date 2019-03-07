@@ -31,30 +31,31 @@ Personnages:
 	Compétences:
 		*Charge: Fonce en ligne droite jusqu'à la case séléctionné en infligeant des dégats à l'ennemi rencontré. Le perso ne possèdera qu'1 PA au tour suivant. (ATK: 10)
 		*Spiral Slash: Inflige des dégats à 1 case du perso sur toutes les directions. (ATK: 5)
-		*Attaque Normale: Coup de hache sur unité adjacente. (1 case, ATK:*)
+		*Attaque Normale: Coup de hache sur unité adjacente. (1 case, ATK: *)
  	        *Posture-Bouclier: Equipe son bouclier pour réduire les dégats subis.(DEF: +3)
 
 - Samuraï: Personnage orienté "Défense" qui possède un katana.
 	Samuraï[16;16;*;*;5;75;50;3;20]
 	
 	Compétences:
-		*Estocade: Empale la cible et la repousse de 2 cases.
-		*Lancer de pierre: Attire l'ennemi vers sa position.
-		*Attaque Normale: Coup de katana sur unité adjacente. (1 case)
-		*Posture-Contre: Effectue une contre-attaque lors de dégats subis.
+		*Estocade: Empale la cible et la repousse de 2 cases. (ATK: 8)
+		*Lancer de pierre: Attire l'ennemi vers sa position. (6 cases)
+		*Attaque Normale: Coup de katana sur unité adjacente. (1 case, ATK: *)
+		*Posture-Contre: Effectue une contre-attaque lors de dégats subis. (ATK: 6)
 
 - Prêteresse: Personnage orienté "Soutien"
-
+	Prêtresse[10;10;*;*;3;80;65;0;30]
+	
 	Compétences:
-		*Soin: Soigne un allié de X PV. 
-		*Boost: Augmente l'ATK d'un allié.
-		*Attaque Normale: Coup de bâton sur unité adjacente.(1 case)
-		*Posture-Défense: Augmente la défense des alliés dans une zone donnée.
+		*Soin: Soigne un allié d'un nombre de PV donné.(PV: +4)
+		*Boost: Augmente l'ATK d'un allié pendant 2 tours. (ATK: +3)
+		*Attaque Normale: Coup de bâton sur unité adjacente.(1 case, ATK: *)
+		*Posture-Défense: Augmente la défense des alliés dans une zone donnée. (3 cases, DEF: +1)
 		
 - Archer: Personnage orienté "Distance"
-
+	Archer[12;12;*;*;4;75;75;1;30]
 	Compétences:
 		*Flèche de chasse: Flèche normale, peu de dégats.
 		*Tir de précision: Flèche puissante, plus de dégats.
 		*Attaque Normale: Coup de couteau sur unité adjacente. (1 case)
-		*Posture Vigilance: Attaque directement à la vue d'un ennemi.
+		*Posture Vigilance: Attaque directement à la vue d'un ennemi. 
