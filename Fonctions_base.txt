@@ -13,7 +13,8 @@ if alea<=Att[ACC]:
    touche=1
 
 if touche==1:
-   if Def[DEF]>=Att[ATK]:
+   if 
+   elif Def[DEF]>=Att[ATK]:
       DGT=0
    else:
       DGT=Def[DEF]-Att[ATK]
@@ -22,4 +23,10 @@ Def[PV]=Def[PV]-DGT
 
 Initiative:
 
+def triBulle(a) :
+   n=len(a)
+   for i in range(n-1) :
+      for j in range(n-1,i,-1) :
+         if a[j][6] < a[j-1][6] then a[j],a[j-1] = a[j-1],a[j]
+         
 
