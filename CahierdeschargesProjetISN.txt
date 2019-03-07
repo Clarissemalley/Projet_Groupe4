@@ -43,7 +43,7 @@ Personnages:
 		*Attaque Normale: Coup de katana sur unité adjacente. (1 case, ATK: *)
 		*Posture-Contre: Effectue une contre-attaque lors de dégats subis. (ATK: 6)
 
-- Prêteresse: Personnage orienté "Soutien"
+- Prêteresse: Personnage orienté "Soutien" qui possède un bâton magique.
 	Prêtresse[10;10;*;*;3;80;65;0;30]
 	
 	Compétences:
@@ -52,8 +52,9 @@ Personnages:
 		*Attaque Normale: Coup de bâton sur unité adjacente.(1 case, ATK: *)
 		*Posture-Défense: Augmente la défense des alliés dans une zone donnée. (3 cases, DEF: +1)
 		
-- Archer: Personnage orienté "Distance"
+- Archer: Personnage orienté "Distance"qui possède un arc.
 	Archer[12;12;*;*;4;75;75;1;30]
+	
 	Compétences:
 		*Flèche de chasse: Flèche normale, peu de dégats. (* cases, ATK: 6)
 		*Tir de précision: Flèche puissante, plus de dégats. (* cases, ATK: 9)
