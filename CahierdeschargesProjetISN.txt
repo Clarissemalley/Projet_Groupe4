@@ -14,6 +14,8 @@ influé sur les personnages en modifiant certaines statistiques de combat.
 
 Statistiques de Combat: 
 
+Les stats d'un personnage sont données dans une liste de la forme : personnage[PV;PVmax;PA;PAmax;ATK;ACC;SPD;DEF;LCK]
+
 Attaque   -> Fixe l'indicateur de dégats en 1 attaque.              |  (ATK)
 Précision -> Fixe les chances de toucher avec une attaque.          |  (ACC)
 Vitesse   -> Influe sur l'odre des tours et les chances d'esquive.  |  (SPD)
@@ -24,16 +26,17 @@ Chance    -> Définit chance de coup critique.(X1.5)                 |  (LCK)
 Personnages:
 
 - Viking: Personnage orienté "Attaque" qui possède une énorme hache et un bouclier dans le dos.
-	Viking[
+	Viking[14;14;*;*;7;60;70;2;40]
 	
 	Compétences:
-		*Charge: Fonce en ligne droite jusqu'à la case séléctionné en infligeant des dégats à l'ennemi rencontré. Le perso ne possèdera qu'1 PA au tour suivant. 
-		*Spiral Slash: Inflige des dégats à 1 case du perso sur toutes les directions.
-		*Attaque Normale: Coup de hache sur unité adjacente. (1 case)
- 	        *Posture-Bouclier: Equipe son bouclier pour réduire les dégats subis.
+		*Charge: Fonce en ligne droite jusqu'à la case séléctionné en infligeant des dégats à l'ennemi rencontré. Le perso ne possèdera qu'1 PA au tour suivant. (ATK: 10)
+		*Spiral Slash: Inflige des dégats à 1 case du perso sur toutes les directions. (ATK: 5)
+		*Attaque Normale: Coup de hache sur unité adjacente. (1 case, ATK:*)
+ 	        *Posture-Bouclier: Equipe son bouclier pour réduire les dégats subis.(DEF: +3)
 
 - Samuraï: Personnage orienté "Défense" qui possède un katana.
-	Samuraï[
+	Samuraï[16;16;*;*;5;75;50;3;20]
+	
 	Compétences:
 		*Estocade: Empale la cible et la repousse de 2 cases.
 		*Lancer de pierre: Attire l'ennemi vers sa position.
