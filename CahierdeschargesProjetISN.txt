@@ -53,4 +53,4 @@ Personnages:
 		*Flèche de chasse: Flèche normale, peu de dégats.
 		*Tir de précision: Flèche puissante, plus de dégats.
 		*Attaque Normale: Coup de couteau sur unité adjacente. (1 case)
-		*Posture Vigilance: Attque directement à la vue d'un ennemi.
+		*Posture Vigilance: Attaque directement à la vue d'un ennemi.
