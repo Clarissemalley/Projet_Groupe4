@@ -8,16 +8,25 @@ défenseur<=>Def
 alea=radint(0, 99)
 
 touche=0
+crit=0
 
 if alea<=Att[ACC]:
    touche=1
 
 if touche==1:
-   if 
-   elif Def[DEF]>=Att[ATK]:
-      DGT=0
+   alea=radint(0, 99)
+   if alea<=Att[LCK]:
+      crit=1
+   if crit=1:
+      if Def[DEF]>=int(Att[ATK]*1.5):
+         DGT=0
+      else:
+         DGT=Def[DEF]-int(Att[ATK]*1.5)
    else:
-      DGT=Def[DEF]-Att[ATK]
+      if Def[DEF]>=Att[ATK]:
+         DGT=0
+      else:
+         DGT=Def[DEF]-Att[ATK]
 
 Def[PV]=Def[PV]-DGT
 
