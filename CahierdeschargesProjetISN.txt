@@ -29,7 +29,7 @@ Personnages:
 		*Charge: Fonce en ligne droite jusqu'à la case séléctionné en infligeant des dégats à l'ennemi rencontré. Le perso ne possèdera qu'1 PA au tour suivant. 
 		*Spiral Slash: Inflige des dégats à 1 case du perso sur toutes les directions.
 		*Attaque Normale: Coup de hache sur unité adjacente. (1 case)
- 	        *Posture-Défense: 
+ 	        *Posture-Bouclier: Equipe son bouclier pour réduire les dégats subis.
 
 - Samuraï: Personnage orienté "Défense" qui possède un katana.
 
@@ -37,7 +37,7 @@ Personnages:
 		*Estocade: Empale la cible et la repousse de 2 cases.
 		*Lancer de pierre: Attire l'ennemi vers sa position.
 		*Attaque Normale: Coup de katana sur unité adjacente. (1 case)
-		*Posture-Contre:
+		*Posture-Contre: Effectue une contre-attaque lors de dégats subis.
 
 - Prêteresse: Personnage orienté "Soutien"
 
@@ -45,11 +45,12 @@ Personnages:
 		*Soin: Soigne un allié de X PV. 
 		*Boost: Augmente l'ATK d'un allié.
 		*Attaque Normale: Coup de bâton sur unité adjacente.(1 case)
-		*Posture-Def: Augmente la défense des alliés dans une zone donnée.
-- Archer: Personnage orienté A"Distance"
+		*Posture-Défense: Augmente la défense des alliés dans une zone donnée.
+		
+- Archer: Personnage orienté "Distance"
 
 	Compétences:
 		*Flèche de chasse: Flèche normale, peu de dégats.
 		*Tir de précision: Flèche puissante, plus de dégats.
 		*Attaque Normale: Coup de couteau sur unité adjacente. (1 case)
-		*Posture vigilance:
+		*Posture Vigilance: Attque directement à la vue d'un ennemi.
