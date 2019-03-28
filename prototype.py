@@ -1,7 +1,8 @@
 #imports
 import pygame
 from pygame.locals import *
-
+#constantes
+PA1=6 #points d'action du personnage joueur numéro 1
 #initialisation de pygame
 pygame.init()
 
@@ -31,13 +32,21 @@ while continuer :
             continuer = 0                   #on arrête la boucle
         if event.type == KEYDOWN :          #éxecute les instructions indentées si une touche du clavier est enfoncée
             if event.key == K_UP:
-                position_goomba = position_goomba.move(0,-100)
+                if not PA1=0:
+                    position_goomba = position_goomba.move(0,-100)
+                    PA1=PA1-1
             if event.key == K_DOWN:
-                position_goomba = position_goomba.move(0,100)
+                if not PA1=0:
+                    position_goomba = position_goomba.move(0,100)
+                    PA1=PA1-1
             if event.key == K_RIGHT:
-                position_goomba = position_goomba.move(100,0)
+                if not PA1=0:
+                    position_goomba = position_goomba.move(100,0)
+                    PA1=PA1-1
             if event.key == K_LEFT:
-                position_goomba = position_goomba.move(-100,0)
+                if not PA1=0:
+                    position_goomba = position_goomba.move(-100,0)
+                    PA1=PA1-1
                 
     fenetre.blit(fond, (0,0))
     fenetre.blit(goomba, position_goomba)
