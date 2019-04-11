@@ -4,7 +4,7 @@ Groupe 4 : Alexis Labreure, Louis Da Silva, Antoine Delage
 
 Titre: Warkadia
 
-Projet: Jeu vidéal style "Tactical RPG", dans le genre Emblème de Feu.
+Projet: Jeu vidéo style "Tactical RPG", dans le genre "Fire Emblem".
 
 Système de jeu: Un nombre réduit de personnages se battent contre une floppée de créatures inspirées de la Mythologie, le jeu se déroule sur une grille à l'image d'un jeu de plateau sur "* x *" cases.
 Chaque personnages joue chacun son tour selon une statistique "Vitesse ou Initiatiuve" propre à chacun, quand un personnage commence son tour il possède un crédit de "point d'action" qui lui permet de se
