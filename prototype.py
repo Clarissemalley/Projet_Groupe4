@@ -26,13 +26,19 @@ pygame.display.flip()
 continuer= 1
 #<variables>
 PA=5
+black = pygame.Color(0,0,0)
+smallfont = pygame.font.SysFont("comicsansms", 25)
+text= smallfont.render("PA: "+str(PA), True, black)
 #</variables>
 while continuer :
     for event in pygame.event.get():        #on parcours la liste de tous les évenements reçus 
         print(event)
+        text= smallfont.render("PA: "+str(PA), True, black)
         if event.type == QUIT:              #si un de ces évenements est de type QUIT
             continuer = 0                   #on arrête la boucle
         if event.type == KEYDOWN :          #éxecute les instructions indentées si une touche du clavier est enfoncée
+            if event.key == K_F11 :
+                pygame.display.toggle_fullscreen
             if event.key == K_UP:
                 if PA>0 :
                     position_goomba = position_goomba.move(0,-100)
@@ -51,6 +57,7 @@ while continuer :
                     PA=PA-1
     fenetre.blit(fond, (0,0))
     fenetre.blit(goomba, position_goomba)
+    fenetre.blit(text, (position_goomba.x+25,position_goomba.y-25))
     pygame.display.flip()
 
 pygame.quit()
