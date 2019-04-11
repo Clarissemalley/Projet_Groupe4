@@ -24,6 +24,9 @@ pygame.display.flip()
 
 #boucle infinie
 continuer= 1
+#<variables>
+PA=5
+#</variables>
 while continuer :
     for event in pygame.event.get():        #on parcours la liste de tous les évenements reçus 
         print(event)
@@ -31,16 +34,24 @@ while continuer :
             continuer = 0                   #on arrête la boucle
         if event.type == KEYDOWN :          #éxecute les instructions indentées si une touche du clavier est enfoncée
             if event.key == K_UP:
-                position_goomba = position_goomba.move(0,-100)
+                if PA>0 :
+                    position_goomba = position_goomba.move(0,-100)
+                    PA=PA-1
             if event.key == K_DOWN:
-                position_goomba = position_goomba.move(0,100)
+                if PA>0 :
+                    position_goomba = position_goomba.move(0,100)
+                    PA=PA-1
             if event.key == K_RIGHT:
-                position_goomba = position_goomba.move(100,0)
+                if PA>0 :
+                    position_goomba = position_goomba.move(100,0)
+                    PA=PA-1
             if event.key == K_LEFT:
-                position_goomba = position_goomba.move(-100,0)
-                
+                if PA>0 :
+                    position_goomba = position_goomba.move(-100,0)
+                    PA=PA-1
     fenetre.blit(fond, (0,0))
     fenetre.blit(goomba, position_goomba)
     pygame.display.flip()
 
 pygame.quit()
+print(PA)
