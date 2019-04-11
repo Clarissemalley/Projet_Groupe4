@@ -2,7 +2,7 @@ CAHIER DES CHARGES:
 
 Groupe 4 : Alexis Labreure, Louis Da Silva, Antoine Delage
 
-Titre: 4rkadia
+Titre: Warkadia
 
 Projet: Jeu vidéal style "Tactical RPG", dans le genre Emblème de Feu.
 
