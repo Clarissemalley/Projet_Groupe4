@@ -6,16 +6,27 @@ from pygame.locals import *
 pygame.init()
 
 #ouverture de la fenêtre pygame
-fenetre = pygame.display.set_mode((1920, 1080))
+fenetre = pygame.display.set_mode((1800, 900))
 
 
 #chargement puis collage du fond
 fond = pygame.image.load("fond.jpg").convert()
 
 
-#chargement puis collage d'un personnage
-goomba = pygame.image.load("perso.png").convert_alpha()
-position_goomba = goomba.get_rect()
+#chargement puis collage des personnages joueurs
+sperso1 = pygame.image.load("perso1.png").convert_alpha()
+position_perso1 = sperso1.get_rect()
+
+sperso2 = pygame.image.load("perso2.png").convert_alpha()
+position_perso2 = sperso2.get_rect()
+
+sperso3 = pygame.image.load("perso3.png").convert_alpha()
+position_perso3 = sperso3.get_rect()
+
+sperso4 = pygame.image.load("perso4.png").convert_alpha()
+position_perso4 = sperso4.get_rect()
+
+
 
 
 
@@ -29,35 +40,122 @@ PA=5
 black = pygame.Color(0,0,0)
 smallfont = pygame.font.SysFont("comicsansms", 25)
 text= smallfont.render("PA: "+str(PA), True, black)
+numperso=1
 #</variables>
+
+#<fonctions>
+def selecperso(): #permet de changer de personnage utilisé en fonction de numperso
+    global numperso
+    if numperso < 1 :
+        numperso = 4
+    if numperso > 4 :
+        numperso = 1
+    if numperso == 1 :
+        perso1()
+    if numperso == 2 :
+        perso2()
+    if numperso == 3 :
+        perso3()
+    if numperso == 4 :
+        perso4()
+
+
+def perso1(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 1
+        global PA
+        global position_perso1
+        if event.key == K_UP :
+            if PA>0 :
+                position_perso1 = position_perso1.move(0,-100)
+                PA=PA-1
+        if event.key == K_DOWN:
+            if PA>0 :
+                position_perso1 = position_perso1.move(0,100)
+                PA=PA-1
+        if event.key == K_RIGHT:
+            if PA>0 :
+                position_perso1 = position_perso1.move(100,0)
+                PA=PA-1
+        if event.key == K_LEFT:
+              if PA>0 :
+                  position_perso1 = position_perso1.move(-100,0)
+                  PA=PA-1
+def perso2(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 2
+        global PA
+        global position_perso2
+        if event.key == K_UP :
+              if PA>0 :
+                 position_perso2 = position_perso2.move(0,-100)
+                 PA=PA-1
+        if event.key == K_DOWN:
+             if PA>0 :
+                position_perso2 = position_perso2.move(0,100)
+                PA=PA-1
+        if event.key == K_RIGHT:
+              if PA>0 :
+                 position_perso2 = position_perso2.move(100,0)
+                 PA=PA-1
+        if event.key == K_LEFT:
+            if PA>0 :
+                position_perso2 = position_perso2.move(-100,0)
+                PA=PA-1
+def perso3(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 3
+        global PA
+        global position_perso3
+        if event.key == K_UP :
+            if PA>0 :
+                position_perso3 = position_perso3.move(0,-100)
+                PA=PA-1
+        if event.key == K_DOWN:
+            if PA>0 :
+                position_perso3 = position_perso3.move(0,100)
+                PA=PA-1
+        if event.key == K_RIGHT:
+            if PA>0 :
+                position_perso3 = position_perso3.move(100,0)
+                PA=PA-1
+        if event.key == K_LEFT:
+            if PA>0 :
+                position_perso3 = position_perso3.move(-100,0)
+                PA=PA-1
+def perso4(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 4
+        global PA
+        global position_perso4
+        if event.key == K_UP :
+            if PA>0 :
+                position_perso4 = position_perso4.move(0,-100)
+                PA=PA-1
+        if event.key == K_DOWN:
+            if PA>0 :
+                position_perso4 = position_perso4.move(0,100)
+                PA=PA-1
+        if event.key == K_RIGHT:
+            if PA>0 :
+                position_perso4 = position_perso4.move(100,0)
+                PA=PA-1
+        if event.key == K_LEFT:
+            if PA>0 :
+                position_perso4 = position_perso4.move(-100,0)
+                PA=PA-1
+#</fonctions>
 while continuer :
-    for event in pygame.event.get():        #on parcours la liste de tous les évenements reçus 
-        print(event)
-        text= smallfont.render("PA: "+str(PA), True, black)
-        if event.type == QUIT:              #si un de ces évenements est de type QUIT
-            continuer = 0                   #on arrête la boucle
-        if event.type == KEYDOWN :          #éxecute les instructions indentées si une touche du clavier est enfoncée
+    for event in pygame.event.get():        #on parcours la liste de tous les évenements reçus
+        if event.type == KEYDOWN :
+            if event.type == QUIT:              #si un de ces évenements est de type QUIT
+                continuer = 0            #on arrête la boucle
             if event.key == K_F11 :
-                pygame.display.toggle_fullscreen
-            if event.key == K_UP:
-                if PA>0 :
-                    position_goomba = position_goomba.move(0,-100)
-                    PA=PA-1
-            if event.key == K_DOWN:
-                if PA>0 :
-                    position_goomba = position_goomba.move(0,100)
-                    PA=PA-1
-            if event.key == K_RIGHT:
-                if PA>0 :
-                    position_goomba = position_goomba.move(100,0)
-                    PA=PA-1
-            if event.key == K_LEFT:
-                if PA>0 :
-                    position_goomba = position_goomba.move(-100,0)
-                    PA=PA-1
+                pygame.display.toggle_fullscreen()
+            if event.key == K_a :
+                numperso= numperso-1
+            if event.key == K_e :
+                numperso= numperso+1
+            selecperso()
+
     fenetre.blit(fond, (0,0))
-    fenetre.blit(goomba, position_goomba)
-    fenetre.blit(text, (position_goomba.x+25,position_goomba.y-25))
+    fenetre.blit(sperso1, position_perso1)
+    fenetre.blit(sperso2, position_perso2)
+    fenetre.blit(sperso3, position_perso3)
+    fenetre.blit(sperso4, position_perso4)
+
     pygame.display.flip()
 
 pygame.quit()
