@@ -63,7 +63,7 @@ def selecperso(): #permet de changer de personnage utilisé en fonction de numpe
 def perso1(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 1
         global PA
         global position_perso1
-        listperso1[14;14;99;99;7;60;70;2;40]
+        listperso1[14,14,99,99,7,60,70,2,40]
         if event.key == K_UP :
             if PA>0 :
                 position_perso1 = position_perso1.move(0,-100)
@@ -83,7 +83,7 @@ def perso1(): #regroupe l'ensemble des événements disponibles quand on utilise
 def perso2(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 2
         global PA
         global position_perso2
-        listperso2[16;16;99;99;5;75;50;3;20]
+        listperso2[16,16,99,99,5,75,50,3,20]
         if event.key == K_UP :
               if PA>0 :
                  position_perso2 = position_perso2.move(0,-100)
@@ -103,7 +103,7 @@ def perso2(): #regroupe l'ensemble des événements disponibles quand on utilise
 def perso3(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 3
         global PA
         global position_perso3
-        listperso3[10;10;99;99;3;80;65;0;30]
+        listperso3[10,10,99,99,3,80,65,0,30]
         if event.key == K_UP :
             if PA>0 :
                 position_perso3 = position_perso3.move(0,-100)
@@ -123,7 +123,7 @@ def perso3(): #regroupe l'ensemble des événements disponibles quand on utilise
 def perso4(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 4
         global PA
         global position_perso4
-        listperso4[12;12;99;99;4;75;75;1;30]
+        listperso4[12,12,99,99,4,75,75,1,30]
         if event.key == K_UP :
             if PA>0 :
                 position_perso4 = position_perso4.move(0,-100)
