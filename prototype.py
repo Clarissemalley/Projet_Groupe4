@@ -36,10 +36,13 @@ pygame.display.flip()
 #boucle infinie
 continuer= 1
 #<variables>
-PA=99
+listperso1=[14,14,99,99,7,60,70,2,40]
+listperso2=[16,16,99,99,5,75,50,3,20]
+listperso3=[10,10,99,99,3,80,65,0,30]
+listperso4=[12,12,99,99,4,75,75,1,30]
+
 black = pygame.Color(0,0,0)
 smallfont = pygame.font.SysFont("comicsansms", 25)
-text= smallfont.render("PA: "+str(PA), True, black)
 numperso=1
 #</variables>
 
@@ -61,12 +64,11 @@ def selecperso(): #permet de changer de personnage utilisé en fonction de numpe
 
 
 def perso1(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 1
-        global PA
         eventperso1()
 
 def eventperso1():
         global position_perso1
-        listperso1=[14,14,99,99,7,60,70,2,40]
+        global listperso1
         if event.key == K_UP :
             if listperso1[2]>0 :
                 position_perso1 = position_perso1.move(0,-100)
@@ -85,11 +87,10 @@ def eventperso1():
                   listperso1[2]=listperso1[2]-1
 
 def perso2(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 2
-        global PA
         eventperso2()
 def eventperso2():
         global position_perso2
-        listperso2=[16,16,99,99,5,75,50,3,20]
+        global listperso2
         if event.key == K_UP :
               if listperso2[2]>0 :
                  position_perso2 = position_perso2.move(0,-100)
@@ -107,11 +108,10 @@ def eventperso2():
                 position_perso2 = position_perso2.move(-100,0)
                 listperso2[2]=listperso2[2]-1
 def perso3(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 3
-        global PA
         eventperso3()
 def eventperso3():
         global position_perso3
-        listperso3=[10,10,99,99,3,80,65,0,30]
+        global listperso3
         if event.key == K_UP :
             if listperso3[2]>0 :
                 position_perso3 = position_perso3.move(0,-100)
@@ -129,11 +129,10 @@ def eventperso3():
                 position_perso3 = position_perso3.move(-100,0)
                 listperso3[2]=listperso3[2]-1
 def perso4(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 4
-        global PA
         eventperso4()
 def eventperso4():
         global position_perso4
-        listperso4=[12,12,99,99,4,75,75,1,30]
+        global listperso4
         if event.key == K_UP :
             if listperso4[2]>0 :
                 position_perso4 = position_perso4.move(0,-100)
@@ -173,4 +172,4 @@ while continuer :
     pygame.display.flip()
 
 pygame.quit()
-print(PA)
+
