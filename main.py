@@ -36,7 +36,6 @@ pygame.display.flip()
 #boucle infinie
 continuer= 1
 #<variables>
-PA=99
 black = pygame.Color(0,0,0)
 smallfont = pygame.font.SysFont("comicsansms", 25)
 numperso=1
