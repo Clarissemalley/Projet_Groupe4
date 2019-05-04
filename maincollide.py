@@ -5,7 +5,7 @@ from pygame.locals import *
 #initialisation de pygame
 pygame.init()
 
-#ouverture de la fenêtre pygame
+#ouverture de la fenÃƒÂªtre pygame
 fenetre = pygame.display.set_mode((1800, 900))
 
 
@@ -26,11 +26,10 @@ position_perso3 = sperso3.get_rect()
 sperso4 = pygame.image.load("perso4.png").convert_alpha()
 position_perso4 = sperso4.get_rect()
 
-list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
 
 
 
-#Rafraichissement d'écran
+#Rafraichissement d'ÃƒÂ©cran
 pygame.display.flip()
 
 #boucle infinie
@@ -42,7 +41,7 @@ numperso=1
 #</variables>
 
 #<fonctions>
-def selecperso(): #permet de changer de personnage utilisé en fonction de numperso
+def selecperso(): #permet de changer de personnage utilisÃƒÂ© en fonction de numperso
     global numperso
     if numperso < 1 :
         numperso = 4
@@ -57,112 +56,121 @@ def selecperso(): #permet de changer de personnage utilisé en fonction de numpe
     if numperso == 4 :
         perso4()
 
-def collision(perso, indice):
-    collide = 0
-    if perso.collidelist(list_perso) != [indice]:
-        collide = 1
-    return(collide)
 
-def perso1(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 1
+def perso1(): #regroupe l'ensemble des ÃƒÂ©vÃƒÂ©nements disponibles quand on utilise le personnage 1
         eventperso1()
 
 def eventperso1():
+        list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
         global position_perso1
         listperso1=[14,14,99,99,7,60,70,2,40]
         if event.key == K_UP :
             if listperso1[2]>0 :
-                if collision(position_perso1.move(0,-100), 0) == 0:
+                if position_perso1.move(0,-100).collidelist(list_perso) == -1:
                     position_perso1 = position_perso1.move(0,-100)
                     listperso1[2]=listperso1[2]-1
         if event.key == K_DOWN:
             if listperso1[2]>0 :
-                if collision(position_perso1.move(0,100), 0) == 0:
+                if position_perso1.move(0,100).collidelist(list_perso) == -1:
                     position_perso1 = position_perso1.move(0,100)
                     listperso1[2]=listperso1[2]-1
         if event.key == K_RIGHT:
             if listperso1[2]>0 :
-                if collision(position_perso1.move(100, 0), 0) == 0:
+                if position_perso1.move(100,0).collidelist(list_perso) == -1:
                     position_perso1 = position_perso1.move(100,0)
                     listperso1[2]=listperso1[2]-1
         if event.key == K_LEFT:
               if listperso1[2]>0 :
-                  if collision(position_perso1.move(-100, 0), 0) == 0:
+                  if position_perso1.move(-100,0).collidelist(list_perso) == -1:
                       position_perso1 = position_perso1.move(-100,0)
                       listperso1[2]=listperso1[2]-1
 
-def perso2(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 2
+def perso2(): #regroupe l'ensemble des ÃƒÂ©vÃƒÂ©nements disponibles quand on utilise le personnage 2
         eventperso2()
 def eventperso2():
+        list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
         global position_perso2
         listperso2=[16,16,99,99,5,75,50,3,20]
         if event.key == K_UP :
               if listperso2[2]>0 :
-                  if collision(position_perso2.move(0,-100), 1) == 0:
+                  if position_perso2.move(0,-100).collidelist(list_perso) == -1:
                      position_perso2 = position_perso2.move(0,-100)
                      listperso2[2]=listperso2[2]-1
         if event.key == K_DOWN:
              if listperso2[2]>0 :
-                 if collision(position_perso2.move(0,100), 1) == 0:
+                 if position_perso2.move(0,100).collidelist(list_perso) == -1:
                     position_perso2 = position_perso2.move(0,100)
                     listperso2[2]=listperso2[2]-1
         if event.key == K_RIGHT:
               if listperso2[2]>0 :
-                  if collision(position_perso2.move(100, 0), 1) == 0:
+                  if position_perso2.move(100,0).collidelist(list_perso) == -1:
                      position_perso2 = position_perso2.move(100,0)
                      listperso2[2]=listperso2[2]-1
         if event.key == K_LEFT:
             if listperso2[2]>0 :
-                if collision(position_perso2.move(-100, 0), 1) == 0:
+                if position_perso2.move(-100,0).collidelist(list_perso) == -1:
                     position_perso2 = position_perso2.move(-100,0)
                     listperso2[2]=listperso2[2]-1
-def perso3(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 
+def perso3(): #regroupe l'ensemble des ÃƒÂ©vÃƒÂ©nements disponibles quand on utilise le personnage
         eventperso3()
 def eventperso3():
+        list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
         global position_perso3
         listperso3=[10,10,99,99,3,80,65,0,30]
         if event.key == K_UP :
             if listperso3[2]>0 :
-                position_perso3 = position_perso3.move(0,-100)
-                listperso3[2]=listperso3[2]-1
+                if position_perso3.move(0,-100).collidelist(list_perso) == -1:
+                    position_perso3 = position_perso3.move(0,-100)
+                    listperso3[2]=listperso3[2]-1
         if event.key == K_DOWN:
             if listperso3[2]>0 :
-                position_perso3 = position_perso3.move(0,100)
-                listperso3[2]=listperso3[2]-1
+                if position_perso3.move(0,100).collidelist(list_perso) == -1:
+                    position_perso3 = position_perso3.move(0,100)
+                    listperso3[2]=listperso3[2]-1
         if event.key == K_RIGHT:
             if listperso3[2]>0 :
-                position_perso3 = position_perso3.move(100,0)
-                listperso3[2]=listperso3[2]-1
+                if position_perso3.move(100,0).collidelist(list_perso) == -1:
+                    position_perso3 = position_perso3.move(100,0)
+                    listperso3[2]=listperso3[2]-1
         if event.key == K_LEFT:
             if listperso3[2]>0 :
-                position_perso3 = position_perso3.move(-100,0)
-                listperso3[2]=listperso3[2]-1
-def perso4(): #regroupe l'ensemble des événements disponibles quand on utilise le personnage 4
+                if position_perso3.move(-100,0).collidelist(list_perso) == -1:
+                    position_perso3 = position_perso3.move(-100,0)
+                    listperso3[2]=listperso3[2]-1
+def perso4(): #regroupe l'ensemble des ÃƒÂ©vÃƒÂ©nements disponibles quand on utilise le personnage 4
         eventperso4()
 def eventperso4():
+        list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
         global position_perso4
         listperso4=[12,12,99,99,4,75,75,1,30]
         if event.key == K_UP :
             if listperso4[2]>0 :
-                position_perso4 = position_perso4.move(0,-100)
-                listperso4[2]=listperso4[2]-1
+                if position_perso4.move(0,-100).collidelist(list_perso) == -1:
+                    position_perso4 = position_perso4.move(0,-100)
+                    listperso4[2]=listperso4[2]-1
         if event.key == K_DOWN:
             if listperso4[2]>0 :
-                position_perso4 = position_perso4.move(0,100)
-                listperso4[2]=listperso4[2]-1
+                if position_perso4.move(0,100).collidelist(list_perso) == -1:
+                    position_perso4 = position_perso4.move(0,100)
+                    listperso4[2]=listperso4[2]-1
         if event.key == K_RIGHT:
             if listperso4[2]>0 :
-                position_perso4 = position_perso4.move(100,0)
-                listperso4[2]=listperso4[2]-1
+                if position_perso4.move(100,0).collidelist(list_perso) == -1:
+                    position_perso4 = position_perso4.move(100,0)
+                    listperso4[2]=listperso4[2]-1
         if event.key == K_LEFT:
             if listperso4[2]>0 :
-                position_perso4 = position_perso4.move(-100,0)
-                listperso4[2]=listperso4[2]-1
+                if position_perso4.move(-100,0).collidelist(list_perso) == -1:
+                    position_perso4 = position_perso4.move(-100,0)
+                    listperso4[2]=listperso4[2]-1
 #</fonctions>
 while continuer :
-    for event in pygame.event.get():        #on parcours la liste de tous les évenements reçus
+    for event in pygame.event.get():        #on parcours la liste de tous les ÃƒÂ©venements reÃƒÂ§us
         if event.type == KEYDOWN :
-            if event.type == QUIT:              #si un de ces évenements est de type QUIT
-                continuer = 0            #on arrête la boucle
+            if event.type == QUIT:              #si un de ces ÃƒÂ©venements est de type QUIT
+                continuer = 0          #on arrÃƒÂªte la boucle
+            if event.key == K_p :
+                continuer = 0
             if event.key == K_F11 :
                 pygame.display.toggle_fullscreen()
             if event.key == K_a :
