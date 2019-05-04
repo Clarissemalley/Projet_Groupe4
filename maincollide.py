@@ -165,12 +165,10 @@ def eventperso4():
                     listperso4[2]=listperso4[2]-1
 #</fonctions>
 while continuer :
-    for event in pygame.event.get():        #on parcours la liste de tous les ÃƒÂ©venements reÃƒÂ§us
-        if event.type == KEYDOWN :
-            if event.type == QUIT:              #si un de ces ÃƒÂ©venements est de type QUIT
-                continuer = 0          #on arrÃƒÂªte la boucle
+    for event in pygame.event.get():        #on parcours la liste de tous les evenements reÃƒÂ§us
+        if event.type == KEYDOWN
             if event.key == K_p :
-                continuer = 0
+                continuer = 0 #on arrete la boucle
             if event.key == K_F11 :
                 pygame.display.toggle_fullscreen()
             if event.key == K_a :
