@@ -238,8 +238,7 @@ while continuer :
             selecperso()
     
 
-    fenetre.blit(fond, (0,0))
-    interface(numperso)
+    fenetre.blit(fond, (0,0)
     fenetre.blit(sperso1, position_perso1)
     fenetre.blit(sperso2, position_perso2)
     fenetre.blit(sperso3, position_perso3)
@@ -247,6 +246,7 @@ while continuer :
     fenetre.blit(smechant1, position_mechant1)
     fenetre.blit(smechant2, position_mechant2)
     fenetre.blit(smechant3, position_mechant3)
+    interface(numperso)
 
     pygame.display.flip()
 
