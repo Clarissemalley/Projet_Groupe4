@@ -106,11 +106,11 @@ def interface(a):
         statsbd1=font.render("ATK: "+str(listperso4[4])+" SPD:"+str(listperso4[5]),1, black)
         statsbd2=font.render("ACC: "+str(listperso4[6])+" DEF: "+str(listperso4[7]),1, black)
         statsbd3=font.render("LCK: "+str(listperso4[8]),1, black)
-    fenetre.blit(statsbg1,(10,1270))
-    fenetre.blit(statsbg2,(10,1250))
-    fenetre.blit(statsbd1,(1500,1270))
-    fenetre.blit(statsbd2,(1500,1250))
-    fenetre.blit(statsbd3,(1500,1230))
+    fenetre.blit(statsbg1,(10,570))
+    fenetre.blit(statsbg2,(10,550))
+    fenetre.blit(statsbd1,(1500,570))
+    fenetre.blit(statsbd2,(1500,550))
+    fenetre.blit(statsbd3,(1500,530))
 
 def perso1(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements disponibles quand on utilise le personnage 1
         eventperso1()
