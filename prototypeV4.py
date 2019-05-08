@@ -172,7 +172,7 @@ def perso3(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©neme
 def eventperso3():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         global position_perso3
-        global list perso3
+        global listperso3
         if event.key == K_UP :
             if listperso3[2]>0 :
                 if position_perso3.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(0,-128)) == 1:
