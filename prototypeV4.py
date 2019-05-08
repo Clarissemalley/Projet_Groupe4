@@ -236,9 +236,10 @@ while continuer :
             if event.key == K_e :
                 numperso= numperso+1
             selecperso()
-    interface(numperso)
+    
 
     fenetre.blit(fond, (0,0))
+    interface(numperso)
     fenetre.blit(sperso1, position_perso1)
     fenetre.blit(sperso2, position_perso2)
     fenetre.blit(sperso3, position_perso3)
