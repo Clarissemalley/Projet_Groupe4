@@ -52,10 +52,10 @@ pygame.display.flip()
 #boucle infinie
 continuer= 1
 #<variables>
-listperso1=[14,14,99,99,7,60,70,2,40]
-listperso2=[16,16,99,99,5,75,50,3,20]
-listperso3=[10,10,99,99,3,80,65,0,30]
-listperso4=[12,12,99,99,4,75,75,1,30]
+listperso1=[14,14,5,5,7,60,70,2,40]
+listperso2=[16,16,4,4,5,75,50,3,20]
+listperso3=[10,10,6,6,3,80,65,0,30]
+listperso4=[12,12,5,5,4,75,75,1,30]
 listmechant1=[5,5,4,4,3,80,90,0,20]
 listmechant2=[5,5,4,4,3,80,90,0,20]
 listmechant3=[5,5,4,4,3,80,90,0,20]
