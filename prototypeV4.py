@@ -80,7 +80,37 @@ def selecperso(): #permet de changer de personnage utilisé en fonction de numpe
         perso3()
     if numperso == 4 :
         perso4()
-
+def interface(a):
+    if a ==1 :
+        statsbg1=font.render("PV: "+str(listperso1[0])+"/"+str(listperso1[1]),1, black)
+        statsbg2=font.render("PA: "+str(listperso1[2])+"/"+str(listperso1[3]),1, black)
+        statsbd1=font.render("ATK: "+str(listperso1[4])+" SPD:"+str(listperso1[5]),1, black)
+        statsbd2=font.render("ACC: "+str(listperso1[6])+" DEF: "+str(listperso1[7]),1, black)
+        statsbd3=font.render("LCK: "+str(listperso1[8]),1, black)
+        position_pointeur=position_perso1
+    elif a==2 :
+        statsbg1=font.render("PV: "+str(listperso2[0])+"/"+str(listperso2[1]),1, black)
+        statsbg2=font.render("PA: "+str(listperso2[2])+"/"+str(listperso2[3]),1, black)
+        statsbd1=font.render("ATK: "+str(listperso2[4])+" SPD:"+str(listperso2[5]),1, black)
+        statsbd2=font.render("ACC: "+str(listperso2[6])+" DEF: "+str(listperso2[7]),1, black)
+        statsbd3=font.render("LCK: "+str(listperso2[8]),1, black)
+    elif a==3 :
+        statsbg1=font.render("PV: "+str(listperso3[0])+"/"+str(listperso3[1]),1, black)
+        statsbg2=font.render("PA: "+str(listperso3[2])+"/"+str(listperso3[3]),1, black)
+        statsbd1=font.render("ATK: "+str(listperso3[4])+" SPD:"+str(listperso3[5]),1, black)
+        statsbd2=font.render("ACC: "+str(listperso3[6])+" DEF: "+str(listperso3[7]),1, black)
+        statsbd3=font.render("LCK: "+str(listperso3[8]),1, black)
+    elif a==4 :
+        statsbg1=font.render("PV: "+str(listperso4[0])+"/"+str(listperso4[1]),1, black)
+        statsbg2=font.render("PA: "+str(listperso4[2])+"/"+str(listperso4[3]),1, black)
+        statsbd1=font.render("ATK: "+str(listperso4[4])+" SPD:"+str(listperso4[5]),1, black)
+        statsbd2=font.render("ACC: "+str(listperso4[6])+" DEF: "+str(listperso4[7]),1, black)
+        statsbd3=font.render("LCK: "+str(listperso4[8]),1, black)
+    fenetre.blit(statsbg1,(10,1270))
+    fenetre.blit(statsbg2,(10,1250))
+    fenetre.blit(statsbd1,(1500,1270))
+    fenetre.blit(statsbd2,(1500,1250))
+    fenetre.blit(statsbd3,(1500,1230))
 
 def perso1(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements disponibles quand on utilise le personnage 1
         eventperso1()
@@ -206,6 +236,7 @@ while continuer :
             if event.key == K_e :
                 numperso= numperso+1
             selecperso()
+    interface(numperso)
 
     fenetre.blit(fond, (0,0))
     fenetre.blit(sperso1, position_perso1)
