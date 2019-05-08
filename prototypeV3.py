@@ -1,4 +1,4 @@
-﻿#imports
+#imports
 import pygame
 from pygame.locals import *
 
@@ -102,22 +102,22 @@ def eventperso2():
         listperso2=[16,16,99,99,5,75,50,3,20]
         if event.key == K_UP :
               if listperso2[2]>0 :
-                  if position_perso2.move(0,-128).collidelist(list_perso) == -1:
+                  if position_perso2.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso2.move(0,-128)) == 1:
                      position_perso2 = position_perso2.move(0,-128)
                      listperso2[2]=listperso2[2]-1
         if event.key == K_DOWN:
              if listperso2[2]>0 :
-                 if position_perso2.move(0,128).collidelist(list_perso) == -1:
+                 if position_perso2.move(0,128).collidelist(list_perso) == -1 and plateau.contains(position_perso2.move(0,128)) == 1:
                     position_perso2 = position_perso2.move(0,128)
                     listperso2[2]=listperso2[2]-1
         if event.key == K_RIGHT:
               if listperso2[2]>0 :
-                  if position_perso2.move(128,0).collidelist(list_perso) == -1:
+                  if position_perso2.move(128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso2.move(128,0)) == 1:
                      position_perso2 = position_perso2.move(128,0)
                      listperso2[2]=listperso2[2]-1
         if event.key == K_LEFT:
             if listperso2[2]>0 :
-                if position_perso2.move(-128,0).collidelist(list_perso) == -1:
+                if position_perso2.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso2.move(-128,0)) == 1:
                     position_perso2 = position_perso2.move(-128,0)
                     listperso2[2]=listperso2[2]-1
 
@@ -129,22 +129,22 @@ def eventperso3():
         listperso3=[10,10,99,99,3,80,65,0,30]
         if event.key == K_UP :
             if listperso3[2]>0 :
-                if position_perso3.move(0,-128).collidelist(list_perso) == -1:
+                if position_perso3.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(0,-128)) == 1:
                     position_perso3 = position_perso3.move(0,-128)
                     listperso3[2]=listperso3[2]-1
         if event.key == K_DOWN:
             if listperso3[2]>0 :
-                if position_perso3.move(0,128).collidelist(list_perso) == -1:
+                if position_perso3.move(0,128).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(0,128)) == 1:
                     position_perso3 = position_perso3.move(0,128)
                     listperso3[2]=listperso3[2]-1
         if event.key == K_RIGHT:
             if listperso3[2]>0 :
-                if position_perso3.move(128,0).collidelist(list_perso) == -1:
+                if position_perso3.move(128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(128,0)) == 1:
                     position_perso3 = position_perso3.move(128,0)
                     listperso3[2]=listperso3[2]-1
         if event.key == K_LEFT:
             if listperso3[2]>0 :
-                if position_perso3.move(-128,0).collidelist(list_perso) == -1:
+                if position_perso3.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(-128,0)) == 1:
                     position_perso3 = position_perso3.move(-128,0)
                     listperso3[2]=listperso3[2]-1
 
@@ -156,22 +156,22 @@ def eventperso4():
         listperso4=[12,12,99,99,4,75,75,1,30]
         if event.key == K_UP :
             if listperso4[2]>0 :
-                if position_perso4.move(0,-128).collidelist(list_perso) == -1:
+                if position_perso4.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(0,-128)) == 1:
                     position_perso4 = position_perso4.move(0,-128)
                     listperso4[2]=listperso4[2]-1
         if event.key == K_DOWN:
             if listperso4[2]>0 :
-                if position_perso4.move(0,128).collidelist(list_perso) == -1:
+                if position_perso4.move(0,128).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(0,128)) == 1:
                     position_perso4 = position_perso4.move(0,128)
                     listperso4[2]=listperso4[2]-1
         if event.key == K_RIGHT:
             if listperso4[2]>0 :
-                if position_perso4.move(128,0).collidelist(list_perso) == -1:
+                if position_perso4.move(128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(128,0)) == 1:
                     position_perso4 = position_perso4.move(128,0)
                     listperso4[2]=listperso4[2]-1
         if event.key == K_LEFT:
             if listperso4[2]>0 :
-                if position_perso4.move(-128,0).collidelist(list_perso) == -1:
+                if position_perso4.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(-128,0)) == 1:
                     position_perso4 = position_perso4.move(-128,0)
                     listperso4[2]=listperso4[2]-1
 
