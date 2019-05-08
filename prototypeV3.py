@@ -6,8 +6,8 @@ from pygame.locals import *
 pygame.init()
 
 #ouverture de la fenêtre pygame
-fenetre = pygame.display.set_mode((1600, 1280))
-
+fenetre = pygame.display.set_mode((1792, 1024))
+plateau = pygame.Rect(0,0,1792,1024)
 
 #chargement puis collage du fond
 fond = pygame.image.load("fond.gif").convert()
@@ -16,16 +16,19 @@ fond = pygame.image.load("fond.gif").convert()
 #chargement puis collage des personnages joueurs
 sperso1 = pygame.image.load("Viking.gif").convert_alpha()
 position_perso1 = sperso1.get_rect()
+position_perso1 = position_perso1.move(128,0)
 
 sperso2 = pygame.image.load("Samourai.gif").convert_alpha()
 position_perso2 = sperso2.get_rect()
+position_perso2 = position_perso2.move(3*128,2*128)
 
 sperso3 = pygame.image.load("Athenien.gif").convert_alpha()
 position_perso3 = sperso3.get_rect()
+position_perso3 = position_perso3.move(0,4*128)
 
 sperso4 = pygame.image.load("Pretresse.gif").convert_alpha()
 position_perso4 = sperso4.get_rect()
-
+position_perso4 = position_perso4.move(2*128,6*128)
 
 
 
@@ -72,22 +75,22 @@ def eventperso1():
         listperso1=[14,14,99,99,7,60,70,2,40]
         if event.key == K_UP :
             if listperso1[2]>0 :
-                if position_perso1.move(0,-128).collidelist(list_perso) == -1:
+                if position_perso1.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso1.move(0,-128)) == 1:
                     position_perso1 = position_perso1.move(0,-128)
                     listperso1[2]=listperso1[2]-1
         if event.key == K_DOWN:
             if listperso1[2]>0 :
-                if position_perso1.move(0,128).collidelist(list_perso) == -1:
+                if position_perso1.move(0,128).collidelist(list_perso) == -1 and plateau.contains(position_perso1.move(0,128)) == 1:
                     position_perso1 = position_perso1.move(0,128)
                     listperso1[2]=listperso1[2]-1
         if event.key == K_RIGHT:
             if listperso1[2]>0 :
-                if position_perso1.move(128,0).collidelist(list_perso) == -1:
+                if position_perso1.move(128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso1.move(128,0)) == 1:
                     position_perso1 = position_perso1.move(128,0)
                     listperso1[2]=listperso1[2]-1
         if event.key == K_LEFT:
               if listperso1[2]>0 :
-                  if position_perso1.move(-128,0).collidelist(list_perso) == -1:
+                  if position_perso1.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso1.move(-128,0)) == 1:
                       position_perso1 = position_perso1.move(-128,0)
                       listperso1[2]=listperso1[2]-1
 
