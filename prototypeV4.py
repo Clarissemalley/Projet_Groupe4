@@ -118,7 +118,7 @@ def perso1(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©neme
 def eventperso1():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         global position_perso1
-        listperso1=[14,14,99,99,7,60,70,2,40]
+        global listperso1
         if event.key == K_UP :
             if listperso1[2]>0 :
                 if position_perso1.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso1.move(0,-128)) == 1:
@@ -145,7 +145,7 @@ def perso2(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©neme
 def eventperso2():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         global position_perso2
-        listperso2=[16,16,99,99,5,75,50,3,20]
+        global listperso2
         if event.key == K_UP :
               if listperso2[2]>0 :
                   if position_perso2.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso2.move(0,-128)) == 1:
@@ -172,7 +172,7 @@ def perso3(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©neme
 def eventperso3():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         global position_perso3
-        listperso3=[10,10,99,99,3,80,65,0,30]
+        global list perso3
         if event.key == K_UP :
             if listperso3[2]>0 :
                 if position_perso3.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(0,-128)) == 1:
@@ -199,7 +199,7 @@ def perso4(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©neme
 def eventperso4():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         global position_perso4
-        listperso4=[12,12,99,99,4,75,75,1,30]
+        global listperso4
         if event.key == K_UP :
             if listperso4[2]>0 :
                 if position_perso4.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(0,-128)) == 1:
