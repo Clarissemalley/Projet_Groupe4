@@ -61,7 +61,7 @@ listmechant2=[5,5,4,4,3,80,90,0,20]
 listmechant3=[5,5,4,4,3,80,90,0,20]
 
 black = pygame.Color(0,0,0)
-smallfont = pygame.font.SysFont("comicsansms", 25)
+font = pygame.font.SysFont("arial", 25)
 numperso=1
 #</variables>
 
