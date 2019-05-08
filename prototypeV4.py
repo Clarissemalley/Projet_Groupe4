@@ -56,44 +56,16 @@ listperso1=[14,14,99,99,7,60,70,2,40]
 listperso2=[16,16,99,99,5,75,50,3,20]
 listperso3=[10,10,99,99,3,80,65,0,30]
 listperso4=[12,12,99,99,4,75,75,1,30]
+listmechant1=[5,5,4,4,3,80,90,0,20]
+listmechant2=[5,5,4,4,3,80,90,0,20]
+listmechant3=[5,5,4,4,3,80,90,0,20]
 
 black = pygame.Color(0,0,0)
-smallfont = pygame.font.SysFont("comicsansms", 15)
+smallfont = pygame.font.SysFont("comicsansms", 25)
 numperso=1
 #</variables>
 
 #<fonctions>
-def interface(a): #permet d'afficher une interface qui renseigne l'utilisateur sur l'état du personnage actif
-    if a ==1 :
-        statsbg1=font.render("PV: "+str(listperso1[0])+"/"+str(listperso1[1]),1, black)
-        statsbg2=font.render("PA: "+str(listperso1[2])+"/"+str(listperso1[3]),1, black)
-        statsbd1=font.render("ATK: "+str(listperso1[4])+" SPD:"+str(listperso1[5]),1, black)
-        statsbd2=font.render("ACC: "+str(listperso1[6])+" DEF: "+str(listperso1[7]),1, black)
-        statsbd3=font.render("LCK: "+str(listperso1[8]),1, black)
-    elif a==2 :
-        statsbg1=font.render("PV: "+str(listperso2[0])+"/"+str(listperso2[1]),1, black)
-        statsbg2=font.render("PA: "+str(listperso2[2])+"/"+str(listperso2[3]),1, black)
-        statsbd1=font.render("ATK: "+str(listperso2[4])+" SPD:"+dtr(listperso2[5]),1, black)
-        statsbd2=font.render("ACC: "+str(listperso2[6])+" DEF: "+str(listperso2[7]),1, black)
-        statsbd3=font.render("LCK: "+str(listperso2[8]),1, black)
-    elif a==3 :
-        statsbg1=font.render("PV: "+str(listperso3[0])+"/"+str(listperso3[1]),1, black)
-        statsbg2=font.render("PA: "+str(listperso3[2])+"/"+str(listperso3[3]),1, black)
-        statsbd1=font.render("ATK: "+str(listperso3[4])+" SPD:"+str(listperso3[5]),1, black)
-        statsbd2=font.render("ACC: "+str(listperso3[6])+" DEF: "+str(listperso3[7]),1, black)
-        statsbd3=font.render("LCK: "+str(listperso3[8]),1, black)
-    elif a==4 :
-        statsbg1=font.render("PV: "+str(listperso4[0])+"/"+str(listperso4[1]),1, black)
-        statsbg2=font.render("PA: "+str(listperso4[2])+"/"+str(listperso4[3]),1, black)
-        statsbd1=font.render("ATK: "+str(listperso4[4])+" SPD:"+str(listperso4[5]),1, black)
-        statsbd2=font.render("ACC: "+str(listperso4[6])+" DEF: "+str(listperso4[7]),1, black)
-        statsbd3=font.render("LCK: "+str(listperso4[8]),1, black)
-    fenetre.blit(statsbg1,(10,1270))
-    fenetre.blit(statsbg2,(10,1250))
-    fenetre.blit(statsbd1,(1500,1270))
-    fenetre.blit(statsbd2,(1500,1250))
-    fenetre.blit(statsbd3,(1500,1230))
-    
 def selecperso(): #permet de changer de personnage utilisé en fonction de numperso
     global numperso
     if numperso < 1 :
@@ -234,7 +206,7 @@ while continuer :
             if event.key == K_e :
                 numperso= numperso+1
             selecperso()
-    interface(numperso)
+
     fenetre.blit(fond, (0,0))
     fenetre.blit(sperso1, position_perso1)
     fenetre.blit(sperso2, position_perso2)
