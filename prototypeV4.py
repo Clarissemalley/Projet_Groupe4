@@ -6,8 +6,8 @@ from pygame.locals import *
 pygame.init()
 
 #ouverture de la fenêtre pygame
-fenetre = pygame.display.set_mode((14*128, 8*128))
-plateau = pygame.Rect(0,0,14*128,8*128)
+fenetre = pygame.display.set_mode((11*128, 7*128))
+plateau = pygame.Rect(0,0,11*128,7*128)
 
 #chargement puis collage du fond
 fond = pygame.image.load("fond.gif").convert()
@@ -32,15 +32,15 @@ position_perso4 = position_perso4.move(2*128,6*128)
 
 smechant1 = pygame.image.load("Draugr.gif").convert_alpha()
 position_mechant1 = smechant1.get_rect()
-position_mechant1 = position_mechant1.move(12*128,3*128)
+position_mechant1 = position_mechant1.move(10*128,1*128)
 
 smechant2 = pygame.image.load("Draugr.gif").convert_alpha()
 position_mechant2 = smechant2.get_rect()
-position_mechant2 = position_mechant2.move(12*128,1*128)
+position_mechant2 = position_mechant2.move(10*128,2*128)
 
 smechant3 = pygame.image.load("Draugr.gif").convert_alpha()
 position_mechant3 = smechant3.get_rect()
-position_mechant3 = position_mechant3.move(12*128,2*128)
+position_mechant3 = position_mechant3.move(10*128,3*128)
 
 pointeur = pygame.image.load("pointeur.png").convert_alpha()
 position_pointeur = pointeur.get_rect()
@@ -111,14 +111,13 @@ def interface(a):
         statsbd2=font.render("ACC: "+str(listperso4[6])+" DEF: "+str(listperso4[7]),1, black)
         statsbd3=font.render("LCK: "+str(listperso4[8]),1, black)
         position_pointeur=position_perso4.move(25,-25)
-    fenetre.blit(statsbg1,(10,570))
-    fenetre.blit(statsbg2,(10,550))
-    fenetre.blit(statsbd1,(1500,570))
-    fenetre.blit(statsbd2,(1500,550))
-    fenetre.blit(statsbd3,(1500,530))
+    fenetre.blit(statsbg1,(0*128,6*128))       
+    fenetre.blit(statsbg2,(0*128,6*128+30)) 
+    fenetre.blit(statsbd1,(10*128-70,6*128))    #Permet de definir l'endroit où les stats s'affichent
+    fenetre.blit(statsbd2,(10*128-70,6*128+25))
+    fenetre.blit(statsbd3,(10*128-70,6*128+50))
     fenetre.blit(pointeur,position_pointeur)
-
-def perso1(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements disponibles quand on utilise le personnage 1
+def perso1(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 1
         eventperso1()
 
 def eventperso1():
@@ -146,7 +145,7 @@ def eventperso1():
                       position_perso1 = position_perso1.move(-128,0)
                       listperso1[2]=listperso1[2]-1
 
-def perso2(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements disponibles quand on utilise le personnage 2
+def perso2(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 2
         eventperso2()
 def eventperso2():
         global position_perso2
@@ -173,7 +172,7 @@ def eventperso2():
                     position_perso2 = position_perso2.move(-128,0)
                     listperso2[2]=listperso2[2]-1
 
-def perso3(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements disponibles quand on utilise le personnage
+def perso3(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage
         eventperso3()
 def eventperso3():
         global position_perso3
@@ -200,7 +199,7 @@ def eventperso3():
                     position_perso3 = position_perso3.move(-128,0)
                     listperso3[2]=listperso3[2]-1
 
-def perso4(): #regroupe l'ensemble des ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements disponibles quand on utilise le personnage 4
+def perso4(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 4
         eventperso4()
 def eventperso4():
         global position_perso4
