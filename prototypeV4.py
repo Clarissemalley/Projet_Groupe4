@@ -117,6 +117,7 @@ def interface(a):
     fenetre.blit(statsbd2,(10*128-70,6*128+25))
     fenetre.blit(statsbd3,(10*128-70,6*128+50))
     fenetre.blit(pointeur,position_pointeur)
+    
 def perso1(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 1
         eventperso1()
 
@@ -254,3 +255,4 @@ while continuer :
     pygame.display.flip()
 
 pygame.quit()
+
