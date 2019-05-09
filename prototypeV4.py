@@ -237,9 +237,7 @@ while continuer :
                 continuer = 0
             if event.key == K_F11 :
                 pygame.display.toggle_fullscreen()
-            if event.key == K_a :
-                numperso= numperso-1
-            if event.key == K_e :
+            if event.key == K_SPACE :
                 numperso= numperso+1
             selecperso()
     
