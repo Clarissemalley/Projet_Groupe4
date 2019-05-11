@@ -61,8 +61,3 @@ Personnages:
 		*Attaque Normale: Coup de couteau sur unité adjacente. (1 case)
 		*Posture Vigilance: Attaque directement à la vue d'un ennemi. (3 cases, ATK: 5)
 		
-def mortdraugr():
-    listmechant1=[5,5,4,4,3,80,90,0,20]
-    listmechant2=[5,5,4,4,3,80,90,0,20]
-    listmechant3=[5,5,4,4,3,80,90,0,20]
-    if
