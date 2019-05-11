@@ -1,4 +1,4 @@
-#imports
+﻿#imports
 import pygame
 from pygame.locals import *
 
@@ -128,13 +128,15 @@ def interface(a):
     fenetre.blit(statsbd3,(10*128-70,6*128+50))
     fenetre.blit(pointeur,position_pointeur)
 
-def perso1(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 1
+def perso1(): #regroupe l'ensemble des ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©vÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©nements disponibles quand on utilise le personnage 1
         eventperso1()
 
 def eventperso1():
-        global position_perso1
-        global listperso1
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
+        list_mechant = [position_mechant1, position_mechant2, position_mechant3]
+        list_statsmechant = [listmechant1, listmechant2, listmechant3]
+        global position_perso1
+        listperso1=[14,14,99,99,7,60,70,2,40]
         if event.key == K_UP :
             if listperso1[2]>0 :
                 if position_perso1.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso1.move(0,-128)) == 1:
@@ -155,13 +157,19 @@ def eventperso1():
                   if position_perso1.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso1.move(-128,0)) == 1:
                       position_perso1 = position_perso1.move(-128,0)
                       listperso1[2]=listperso1[2]-1
+        if pygame.mouse.get_pressed()[0]==1:
+            curseur = pygame.Rect(pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],2,2)
+            if curseur.collidelist(list_mechant) != -1:
+                if list_mechant[curseur.collidelist(list_mechant)].colliderect(position_perso1.inflate(5,5)):
+                    degats(listperso1, list_statsmechant[curseur.collidelist(list_mechant)])
+                    listperso1[2]=0
 
-def perso2(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 2
+def perso2(): #regroupe l'ensemble des ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©vÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©nements disponibles quand on utilise le personnage 2
         eventperso2()
 def eventperso2():
-        global position_perso2
-        global listperso2
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
+        global position_perso2
+        listperso2=[16,16,99,99,5,75,50,3,20]
         if event.key == K_UP :
               if listperso2[2]>0 :
                   if position_perso2.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso2.move(0,-128)) == 1:
@@ -182,13 +190,19 @@ def eventperso2():
                 if position_perso2.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso2.move(-128,0)) == 1:
                     position_perso2 = position_perso2.move(-128,0)
                     listperso2[2]=listperso2[2]-1
+        if pygame.mouse.get_pressed()[0]==1:
+            curseur = pygame.Rect(pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],2,2)
+            if curseur.collidelist(list_mechant) != -1:
+                if list_mechant[curseur.collidelist(list_mechant)].colliderect(position_perso2.inflate(5,5)):
+                    degats(listperso2, list_statsmechant[curseur.collidelist(list_mechant)])
+                    listperso2[2]=0
 
-def perso3(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage
+def perso3(): #regroupe l'ensemble des ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©vÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©nements disponibles quand on utilise le personnage
         eventperso3()
 def eventperso3():
-        global position_perso3
-        global listperso3
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
+        global position_perso3
+        listperso3=[10,10,99,99,3,80,65,0,30]
         if event.key == K_UP :
             if listperso3[2]>0 :
                 if position_perso3.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(0,-128)) == 1:
@@ -209,13 +223,17 @@ def eventperso3():
                 if position_perso3.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(-128,0)) == 1:
                     position_perso3 = position_perso3.move(-128,0)
                     listperso3[2]=listperso3[2]-1
+        if curseur.collidelist(list_mechant) != -1:
+                if list_mechant[curseur.collidelist(list_mechant)].colliderect(position_perso3.inflate(5,5)):
+                    degats(listperso3, list_statsmechant[curseur.collidelist(list_mechant)])
+                    listperso3[2]=0
 
-def perso4(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 4
+def perso4(): #regroupe l'ensemble des ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©vÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©nements disponibles quand on utilise le personnage 4
         eventperso4()
 def eventperso4():
-        global position_perso4
-        global listperso4
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
+        global position_perso4
+        listperso4=[12,12,99,99,4,75,75,1,30]
         if event.key == K_UP :
             if listperso4[2]>0 :
                 if position_perso4.move(0,-128).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(0,-128)) == 1:
@@ -236,6 +254,10 @@ def eventperso4():
                 if position_perso4.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(-128,0)) == 1:
                     position_perso4 = position_perso4.move(-128,0)
                     listperso4[2]=listperso4[2]-1
+        if curseur.collidelist(list_mechant) != -1:
+                if list_mechant[curseur.collidelist(list_mechant)].colliderect(position_perso4.inflate(5,5)):
+                    degats(listperso4, list_statsmechant[curseur.collidelist(list_mechant)])
+                    listperso4[2]=0
 def mechant1():
     print("intégrer combats")
 def mechant2():
@@ -270,4 +292,3 @@ while continuer :
     pygame.display.flip()
 
 pygame.quit()
-
