@@ -65,23 +65,33 @@ listmechant3=[5,5,4,4,3,80,90,0,20]
 black = pygame.Color(0,0,0)
 font = pygame.font.SysFont("arial", 25)
 numperso=1
-#</variables>
-
+numpersoally=3
 #<fonctions>
 def selecperso(): #permet de changer de personnage utilisé en fonction de numperso
     global numperso
+    global numpersoally
     if numperso < 1 :
         numperso = 4
-    if numperso > 4 :
+    if numperso > 7 :
         numperso = 1
     if numperso == 1 :
-        perso1()
+        mechant1()
     if numperso == 2 :
-        perso2()
-    if numperso == 3 :
+        numpersoally=3
         perso3()
+    if numperso == 3 :
+        numpersoally=1
+        perso1()
     if numperso == 4 :
+        numpersoally=4
         perso4()
+    if numperso == 5 :
+        numpersoally=2
+        perso2()
+    if numperso == 6:
+        mechant2()
+    if numperso == 7:
+        mechant3()
 def interface(a):
     if a ==1 :
         statsbg1=font.render("PV: "+str(listperso1[0])+"/"+str(listperso1[1]),1, black)
@@ -111,13 +121,13 @@ def interface(a):
         statsbd2=font.render("ACC: "+str(listperso4[6])+" DEF: "+str(listperso4[7]),1, black)
         statsbd3=font.render("LCK: "+str(listperso4[8]),1, black)
         position_pointeur=position_perso4.move(25,-25)
-    fenetre.blit(statsbg1,(0*128,6*128))       
-    fenetre.blit(statsbg2,(0*128,6*128+30)) 
+    fenetre.blit(statsbg1,(0*128,6*128))
+    fenetre.blit(statsbg2,(0*128,6*128+30))
     fenetre.blit(statsbd1,(10*128-70,6*128))    #Permet de definir l'endroit où les stats s'affichent
     fenetre.blit(statsbd2,(10*128-70,6*128+25))
     fenetre.blit(statsbd3,(10*128-70,6*128+50))
     fenetre.blit(pointeur,position_pointeur)
-    
+
 def perso1(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 1
         eventperso1()
 
@@ -226,7 +236,12 @@ def eventperso4():
                 if position_perso4.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(-128,0)) == 1:
                     position_perso4 = position_perso4.move(-128,0)
                     listperso4[2]=listperso4[2]-1
-
+def mechant1():
+    print("intégrer combats")
+def mechant2():
+    print("intégrer combats")
+def mechant3():
+    print("intégrer combats")
 #</fonctions>
 while continuer :
     for event in pygame.event.get():        #on parcours la liste de tous les évenements reçus
@@ -240,7 +255,7 @@ while continuer :
             if event.key == K_SPACE :
                 numperso= numperso+1
             selecperso()
-    
+
 
     fenetre.blit(fond, (0,0))
     fenetre.blit(sperso1, position_perso1)
@@ -250,7 +265,7 @@ while continuer :
     fenetre.blit(smechant1, position_mechant1)
     fenetre.blit(smechant2, position_mechant2)
     fenetre.blit(smechant3, position_mechant3)
-    interface(numperso)
+    interface(numpersoally)
 
     pygame.display.flip()
 
