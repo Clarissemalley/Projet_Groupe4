@@ -39,4 +39,29 @@ def triBulle(a) :
          if a[j][6] > a[j-1][6] :
             a[j],a[j-1] = a[j-1],a[j]
          
+Déplacement ennemis:
 
+def movemechant(mechant) :
+   boucle = 0
+   while boucle ==1:
+      direction = random.randint(0, 3)
+      if direction == 0 and plateau.contains(mechant.move(0, -128)) == 1:
+         mechant = mechant.move(0, -128)
+         boucle = 0
+      if direction == 1 and plateau.contains(mechant.move(0, 128)) == 1:
+         mechant = mechant.move(0, 128)
+         boucle = 0
+      if direction == 2 and plateau.contains(mechant.move(128, 0)) == 1:
+         mechant = mechant.move(128 0)
+         boucle = 0
+      if direction == 3 and plateau.contains(mechant.move(-128, 0)) == 1:
+         mechant = mechant.move(-128, 0)
+         boucle = 0
+  
+while listmechant1[3] > 0:
+   if position_mechant1.inflate(5,5).collidelist(list_mechant) != -1:
+      degats(listmechant1, list_statsperso[position_mechant1.inflate(5,5).collidelist(list_mechant)])
+      listmechant1[2]=0
+   else:
+      movemechant(position_mechant1)
+      listmechant1[2]=listmechant1[2]-1
