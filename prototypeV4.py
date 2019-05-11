@@ -1,4 +1,4 @@
-﻿#imports
+#imports
 import pygame
 from pygame.locals import *
 import random
@@ -55,6 +55,7 @@ pygame.display.flip()
 #boucle infinie
 continuer= 1
 #<variables>
+#[PV;PVmax;PA;PAmax;ATK;ACC;SPD;DEF;LCK]
 listperso1=[14,14,5,5,7,60,70,2,40]
 listperso2=[16,16,4,4,5,75,50,3,20]
 listperso3=[10,10,6,6,3,80,65,0,30]
@@ -129,9 +130,9 @@ def interface(a):
     fenetre.blit(statsbd3,(10*128-70,6*128+50))
     fenetre.blit(pointeur,position_pointeur)
 
-def degats(Att, Def):   #Permet de calculer les dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©gats infligÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©s au DÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©fenseur(Def) au terme de son combat contre l'Attaquant(Att)
-    touche=0            #Variable ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©gale ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  0 si l'attaque rate sa cible ou ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  1 si elle touche
-    crit=0              #Variable ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©gale ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  0 si l'attaque est normale ou ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â  1 si elle est critique
+def degats(Att, Def):   #Permet de calculer les degats au Defenseur(Def) au terme de son combat contre l'Attaquant(Att)
+    touche=0            #Variable egale a 0 si l'attaque rate sa cible ou a 1 si elle touche
+    crit=0              #Variable egale a 0 si l'attaque est normale ou a 1 si elle est critique
     alea=random.randint(0, 99)
 
     if alea<=Att[5]:
@@ -194,6 +195,8 @@ def perso2(): #regroupe l'ensemble des ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â�
         eventperso2()
 def eventperso2():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
+        list_mechant = [position_mechant1, position_mechant2, position_mechant3]
+        list_statsmechant = [listmechant1, listmechant2, listmechant3]
         global position_perso2
         listperso2=[16,16,99,99,5,75,50,3,20]
         if event.key == K_UP :
@@ -227,6 +230,8 @@ def perso3(): #regroupe l'ensemble des ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â�
         eventperso3()
 def eventperso3():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
+        list_mechant = [position_mechant1, position_mechant2, position_mechant3]
+        list_statsmechant = [listmechant1, listmechant2, listmechant3]
         global position_perso3
         listperso3=[10,10,99,99,3,80,65,0,30]
         if event.key == K_UP :
@@ -249,15 +254,20 @@ def eventperso3():
                 if position_perso3.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso3.move(-128,0)) == 1:
                     position_perso3 = position_perso3.move(-128,0)
                     listperso3[2]=listperso3[2]-1
-        if curseur.collidelist(list_mechant) != -1:
+        if pygame.mouse.get_pressed()[0]==1:
+            curseur = pygame.Rect(pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],2,2)
+            if curseur.collidelist(list_mechant) != -1:
                 if list_mechant[curseur.collidelist(list_mechant)].colliderect(position_perso3.inflate(5,5)):
                     degats(listperso3, list_statsmechant[curseur.collidelist(list_mechant)])
                     listperso3[2]=0
 
-def perso4(): #regroupe l'ensemble des ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©vÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©nements disponibles quand on utilise le personnage 4
+def perso4(): #regroupe l'ensemble des ÃƒÆ’ÃÃ†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©vÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©nements disponibles quand on utilise le personnage 4
+
         eventperso4()
 def eventperso4():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
+        list_mechant = [position_mechant1, position_mechant2, position_mechant3]
+        list_statsmechant = [listmechant1, listmechant2, listmechant3]
         global position_perso4
         listperso4=[12,12,99,99,4,75,75,1,30]
         if event.key == K_UP :
@@ -280,7 +290,9 @@ def eventperso4():
                 if position_perso4.move(-128,0).collidelist(list_perso) == -1 and plateau.contains(position_perso4.move(-128,0)) == 1:
                     position_perso4 = position_perso4.move(-128,0)
                     listperso4[2]=listperso4[2]-1
-        if curseur.collidelist(list_mechant) != -1:
+        if pygame.mouse.get_pressed()[0]==1:
+            curseur = pygame.Rect(pygame.mouse.get_pos()[0],pygame.mouse.get_pos()[1],2,2)
+            if curseur.collidelist(list_mechant) != -1:
                 if list_mechant[curseur.collidelist(list_mechant)].colliderect(position_perso4.inflate(5,5)):
                     degats(listperso4, list_statsmechant[curseur.collidelist(list_mechant)])
                     listperso4[2]=0
@@ -304,7 +316,6 @@ while continuer :
                 numperso= numperso+1
             selecperso()
 
-
     fenetre.blit(fond, (0,0))
     fenetre.blit(sperso1, position_perso1)
     fenetre.blit(sperso2, position_perso2)
@@ -316,5 +327,6 @@ while continuer :
     interface(numpersoally)
 
     pygame.display.flip()
+
 
 pygame.quit()
