@@ -62,7 +62,7 @@ listmechant1=[9,9,4,4,3,80,90,0,20]
 listmechant2=[12,12,5,5,5,70,50,0,25]
 listmechant3=[15,15,3,3,3,65,40,1,15]
 
-#Creation d'un rectangle dans lequel les personnages sont envoyes dès qu'ils meurent
+#Creation d'un rectangle dans lequel les personnages sont envoyes des qu'ils meurent
 poubelle = pygame.Rect(-128,-128,128,128)
 
 black = pygame.Color(0,0,0)
@@ -75,8 +75,8 @@ numperso=1
 numally=3
 #<fonctions>
 def selecperso(): #determine quel personnage ou ennemi joue si il est vivant
-    global numperso #variable représentant quel tour de jeu est en cours, de 1 à 7
-    global numally  #variable représentant le personnage joué
+    global numperso #variable representant quel tour de jeu est en cours, de 1 à 7
+    global numally  #variable representant le personnage joue
     if numperso < 1 :
         numperso = 4
     if numperso > 7 :
@@ -135,7 +135,7 @@ def selecperso(): #determine quel personnage ou ennemi joue si il est vivant
             mechant3()
         else:
             numperso=numperso+1
-def mort_affichage():   #Vérifie si un personnage est mort et le place dans la poubelle si tel est le cas
+def mort_affichage():   #Verifie si un personnage est mort et le place dans la poubelle si tel est le cas
     global position_perso1
     global position_perso2
     global position_perso3
@@ -164,7 +164,7 @@ def mort_affichage():   #Vérifie si un personnage est mort et le place dans la 
     if listmechant3[0]<=0:
         position_mechant3=position_mechant3.clamp(poubelle)
 
-def seleccombat():  #lance la fonction de combat correspondant au personnage joué
+def seleccombat():  #lance la fonction de combat correspondant au personnage joue
     global numperso
     if numperso == 2 :
         combatperso3()
@@ -174,7 +174,7 @@ def seleccombat():  #lance la fonction de combat correspondant au personnage jou
         combatperso4()
     if numperso == 5 :
         combatperso2()
-def interface(a):   #affiche les statistiques du personnage joué, la vie des trois ennemis et place le curseur au dessus du personnage joué
+def interface(a):   #affiche les statistiques du personnage joue, la vie des trois ennemis et place le curseur au dessus du personnage joue
     if a ==1 :
         nomperso=font.render(("Viking"),1, green)
         statsbg1=font.render("PV: "+str(listperso1[0])+"/"+str(listperso1[1]),1, green)
@@ -215,7 +215,7 @@ def interface(a):   #affiche les statistiques du personnage joué, la vie des tr
     fenetre.blit(nomperso,(0*128,6*128))
     fenetre.blit(statsbg1,(0*128,6*128+30))
     fenetre.blit(statsbg2,(0*128,6*128+60))
-    fenetre.blit(statsbd1,(10*128-30,6*128))    #Permet de definir l'endroit où les stats s'affichent
+    fenetre.blit(statsbd1,(10*128-30,6*128))    #Permet de definir l'endroit ou les stats s'affichent
     fenetre.blit(statsbd2,(10*128-30,6*128+25))
     fenetre.blit(statsbd3,(10*128-30,6*128+50))
     fenetre.blit(pvmechant1,(10*128-10,0*128))
@@ -248,7 +248,7 @@ def degats(Att, Def):   #Permet de calculer les degats au Defenseur(Def) au term
 
        Def[0]=Def[0]-DGT
 
-def movemechant(mechant) :  #renvoie une direction choisie aléatoirement si l'ennemi reste sur le plateau en se déplacent
+def movemechant(mechant) :  #renvoie une direction choisie aleatoirement si l'ennemi reste sur le plateau en se deplacent
     boucle = 1
     while boucle ==1:
       direction = random.randint(0, 3)
