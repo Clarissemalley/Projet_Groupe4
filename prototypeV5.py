@@ -59,8 +59,8 @@ listperso2=[16,16,4,4,5,75,50,3,20]
 listperso3=[10,10,6,6,3,80,65,0,30]
 listperso4=[12,12,5,5,4,75,75,1,30]
 listmechant1=[5,5,4,4,3,80,90,0,20]
-listmechant2=[5,5,4,4,3,80,90,0,20]
-listmechant3=[5,5,4,4,3,80,90,0,20]
+listmechant2=[10,10,5,5,5,70,50,0,25]
+listmechant3=[12,12,3,3,3,65,40,1,15]
 
 black = pygame.Color(0,0,0)
 font = pygame.font.SysFont("arial", 25)
