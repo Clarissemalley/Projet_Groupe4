@@ -184,7 +184,7 @@ def interface(a):   #affiche les statistiques du personnage joué, la vie des tr
         statsbd3=font.render("LCK: "+str(listperso1[8]),1, black)
         position_pointeur=position_perso1.move(25,-25)
     elif a==2 :
-        nomperso=font.render(("Samouraï"),1, red)
+        nomperso=font.render(("Samourai"),1, red)
         statsbg1=font.render("PV: "+str(listperso2[0])+"/"+str(listperso2[1]),1, red)
         statsbg2=font.render("PA: "+str(listperso2[2])+"/"+str(listperso2[3]),1, red)
         statsbd1=font.render("ATK: "+str(listperso2[4])+" SPD:"+str(listperso2[5]),1, black)
@@ -192,7 +192,7 @@ def interface(a):   #affiche les statistiques du personnage joué, la vie des tr
         statsbd3=font.render("LCK: "+str(listperso2[8]),1, black)
         position_pointeur=position_perso2.move(25,-25)
     elif a==3 :
-        nomperso=font.render(("Athénien"),1, blue)
+        nomperso=font.render(("Athenien"),1, blue)
         statsbg1=font.render("PV: "+str(listperso3[0])+"/"+str(listperso3[1]),1, blue)
         statsbg2=font.render("PA: "+str(listperso3[2])+"/"+str(listperso3[3]),1, blue)
         statsbd1=font.render("ATK: "+str(listperso3[4])+" SPD:"+str(listperso3[5]),1, black)
@@ -200,7 +200,7 @@ def interface(a):   #affiche les statistiques du personnage joué, la vie des tr
         statsbd3=font.render("LCK: "+str(listperso3[8]),1, black)
         position_pointeur=position_perso3.move(25,-25)
     elif a==4 :
-        nomperso=font.render(("Prêtresse"),1, yellow)
+        nomperso=font.render(("Pretresse"),1, yellow)
         statsbg1=font.render("PV: "+str(listperso4[0])+"/"+str(listperso4[1]),1, yellow)
         statsbg2=font.render("PA: "+str(listperso4[2])+"/"+str(listperso4[3]),1, yellow)
         statsbd1=font.render("ATK: "+str(listperso4[4])+" SPD:"+str(listperso4[5]),1, black)
