@@ -215,9 +215,9 @@ def interface(a):   #affiche les statistiques du personnage joue, la vie des tro
     fenetre.blit(nomperso,(0*128,6*128))
     fenetre.blit(statsbg1,(0*128,6*128+30))
     fenetre.blit(statsbg2,(0*128,6*128+60))
-    fenetre.blit(statsbd1,(10*128-30,6*128))    #Permet de definir l'endroit ou les stats s'affichent
-    fenetre.blit(statsbd2,(10*128-30,6*128+25))
-    fenetre.blit(statsbd3,(10*128-30,6*128+50))
+    fenetre.blit(statsbd1,(8*128,6*128))    #Permet de definir l'endroit ou les stats s'affichent
+    fenetre.blit(statsbd2,(8*128,6*128+25))
+    fenetre.blit(statsbd3,(8*128,6*128+50))
     fenetre.blit(pvmechant1,(10*128-10,0*128))
     fenetre.blit(pvmechant2,(10*128-30,0*128+30))
     fenetre.blit(pvmechant3,(10*128-30,0*128+60))
