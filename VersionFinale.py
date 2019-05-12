@@ -6,7 +6,7 @@ import random
 #initialisation de pygame
 pygame.init()
 
-#ouverture de la fenêtre pygame
+#ouverture de la fenetre pygame et delimitation du plateau de jeu
 fenetre = pygame.display.set_mode((11*128, 7*128))
 plateau = pygame.Rect(0,0,11*128,7*128)
 
@@ -14,7 +14,7 @@ plateau = pygame.Rect(0,0,11*128,7*128)
 fond = pygame.image.load("fond.gif").convert_alpha()
 
 
-#chargement puis collage des personnages joueurs
+#chargement puis collage des personnages, des ennemis et du curseur
 sperso1 = pygame.image.load("Viking.gif").convert_alpha()
 position_perso1 = sperso1.get_rect()
 position_perso1 = position_perso1.move(1*128,0)
@@ -62,15 +62,17 @@ listmechant1=[9,9,4,4,3,80,90,0,20]
 listmechant2=[12,12,5,5,5,70,50,0,25]
 listmechant3=[15,15,3,3,3,65,40,1,15]
 
+#Creation d'un rectangle dans lequel les personnages sont envoyes dès qu'ils meurent
 poubelle = pygame.Rect(-128,-128,128,128)
+
 black = pygame.Color(0,0,0)
 font = pygame.font.SysFont("arial", 25)
 numperso=1
 numally=3
 #<fonctions>
-def selecperso(): #permet de changer de personnage utilisé en fonction de numperso
-    global numperso
-    global numally
+def selecperso(): #determine quel personnage ou ennemi joue si il est vivant
+    global numperso #variable représentant quel tour de jeu est en cours, de 1 à 7
+    global numally  #variable représentant le personnage joué
     if numperso < 1 :
         numperso = 4
     if numperso > 7 :
@@ -129,7 +131,7 @@ def selecperso(): #permet de changer de personnage utilisé en fonction de numpe
             mechant3()
         else:
             numperso=numperso+1
-def mort_affichage():
+def mort_affichage():   #Vérifie si un personnage est mort et le place dans la poubelle si tel est le cas
     global position_perso1
     global position_perso2
     global position_perso3
@@ -158,7 +160,7 @@ def mort_affichage():
     if listmechant3[0]<=0:
         position_mechant3=position_mechant3.clamp(poubelle)
 
-def seleccombat():
+def seleccombat():  #lance la fonction de combat correspondant au personnage joué
     global numperso
     if numperso == 2 :
         combatperso3()
@@ -168,7 +170,7 @@ def seleccombat():
         combatperso4()
     if numperso == 5 :
         combatperso2()
-def interface(a):
+def interface(a):   #affiche les statistiques du personnage joué, la vie des trois ennemis et place le curseur au dessus du personnage joué
     if a ==1 :
         statsbg1=font.render("PV: "+str(listperso1[0])+"/"+str(listperso1[1]),1, black)
         statsbg2=font.render("PA: "+str(listperso1[2])+"/"+str(listperso1[3]),1, black)
@@ -237,7 +239,7 @@ def degats(Att, Def):   #Permet de calculer les degats au Defenseur(Def) au term
 
        Def[0]=Def[0]-DGT
 
-def movemechant(mechant) :
+def movemechant(mechant) :  #renvoie une direction choisie aléatoirement si l'ennemi reste sur le plateau en se déplacent
     boucle = 1
     while boucle ==1:
       direction = random.randint(0, 3)
@@ -255,9 +257,6 @@ def movemechant(mechant) :
          boucle = 0
 
 def perso1(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 1
-        eventperso1()
-
-def eventperso1():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         list_mechant = [position_mechant1, position_mechant2, position_mechant3]
         list_statsmechant = [listmechant1, listmechant2, listmechant3]
@@ -286,7 +285,7 @@ def eventperso1():
         if event.key == K_SPACE:
             listperso1[2]=0
 
-def combatperso1():
+def combatperso1(): #lance la fonction de combat entre le personnage 1 et l'ennemi adjacent sur lequel le joueur clique
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         list_mechant = [position_mechant1, position_mechant2, position_mechant3]
         list_statsmechant = [listmechant1, listmechant2, listmechant3]
@@ -300,8 +299,6 @@ def combatperso1():
                         listperso1[2]=0
 
 def perso2(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 2
-        eventperso2()
-def eventperso2():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         list_mechant = [position_mechant1, position_mechant2, position_mechant3]
         list_statsmechant = [listmechant1, listmechant2, listmechant3]
@@ -330,7 +327,7 @@ def eventperso2():
         if event.key == K_SPACE:
             listperso2[2]=0
 
-def combatperso2():
+def combatperso2(): #lance la fonction de combat entre le personnage 2 et l'ennemi adjacent sur lequel le joueur clique
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         list_mechant = [position_mechant1, position_mechant2, position_mechant3]
         list_statsmechant = [listmechant1, listmechant2, listmechant3]
@@ -344,8 +341,6 @@ def combatperso2():
                         listperso2[2]=0
 
 def perso3(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage
-        eventperso3()
-def eventperso3():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         list_mechant = [position_mechant1, position_mechant2, position_mechant3]
         list_statsmechant = [listmechant1, listmechant2, listmechant3]
@@ -374,7 +369,7 @@ def eventperso3():
         if event.key == K_SPACE:
             listperso3[2]=0
 
-def combatperso3():
+def combatperso3(): #lance la fonction de combat entre le personnage 3 et l'ennemi adjacent sur lequel le joueur clique
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         list_mechant = [position_mechant1, position_mechant2, position_mechant3]
         list_statsmechant = [listmechant1, listmechant2, listmechant3]
@@ -388,9 +383,6 @@ def combatperso3():
                         listperso3[2]=0
 
 def perso4(): #regroupe l'ensemble des evenements disponibles quand on utilise le personnage 4
-
-        eventperso4()
-def eventperso4():
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
         list_mechant = [position_mechant1, position_mechant2, position_mechant3]
         list_statsmechant = [listmechant1, listmechant2, listmechant3]
@@ -419,7 +411,7 @@ def eventperso4():
         if event.key == K_SPACE:
             listperso4[2]=0
 
-def combatperso4():
+def combatperso4(): #lance la fonction de combat entre le personnage 4 et l'ennemi adjacent sur lequel le joueur clique
         list_perso = [position_perso1, position_perso2, position_perso3, position_perso4, position_mechant1, position_mechant2, position_mechant3]
         list_mechant = [position_mechant1, position_mechant2, position_mechant3]
         list_statsmechant = [listmechant1, listmechant2, listmechant3]
@@ -431,15 +423,15 @@ def combatperso4():
                     if list_mechant[curseur.collidelist(list_mechant)].colliderect(position_perso4.inflate(5,5)):
                         degats(listperso4, list_statsmechant[curseur.collidelist(list_mechant)])
                         listperso4[2]=0
-def mechant1():
+def mechant1(): #Rassemble les différentes actions que l'ennemi 1 effectura pendant son tour
     global position_mechant1
     global numperso
     list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
     list_mechant=[position_mechant1,position_mechant2,position_mechant3]
     list_statsperso=[listperso1, listperso2, listperso3, listperso4]
     while listmechant1[2] > 0:
-        if position_mechant1.inflate(5,5).collidelist(list_perso) != -1:
-           degats(listmechant1, list_statsperso[position_mechant1.inflate(5,5).collidelist(list_perso)])
+        if position_mechant1.inflate(5,5).collidelist(list_perso) != -1:    #Si un personnage jouable se trouve sur une des 8 cases adjacentes au monstre,
+           degats(listmechant1, list_statsperso[position_mechant1.inflate(5,5).collidelist(list_perso)])    #Le monstre attaque ce personnage
            listmechant1[2]=0
         else:
             direction = movemechant(position_mechant1)
@@ -454,7 +446,7 @@ def mechant1():
             listmechant1[2]=listmechant1[2]-1
     numperso=numperso+1
 
-def mechant2():
+def mechant2(): #Rassemble les différentes actions que l'ennemi 2 effectura pendant son tour
     global position_mechant2
     global numperso
     list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
@@ -478,7 +470,7 @@ def mechant2():
     numperso=numperso+1
 
 
-def mechant3():
+def mechant3(): #Rassemble les différentes actions que l'ennemi 3 effectura pendant son tour
     global position_mechant3
     global numperso
     list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
@@ -506,15 +498,15 @@ def mechant3():
 while continuer :
     for event in pygame.event.get():        #on parcours la liste de tous les évenements reçus
         if event.type == KEYDOWN:
-            if event.type == QUIT:              #si un de ces évenements est de type QUIT
+            if event.type == QUIT:              #si un de ces evenements est de type QUIT
                 continuer = 0            #on arrête la boucle
-            if event.key == K_p :
+            if event.key == K_ESCAPE :  #Appuyer sur "ECHAP" arrete la boucle
                 continuer = 0
             if event.key == K_F11 :
                 pygame.display.toggle_fullscreen()
             selecperso()
-        if event.type == MOUSEBUTTONDOWN:
-            seleccombat()
+        if event.type == MOUSEBUTTONDOWN:   #Dès qu'un bouton de la souris est pressé,
+            seleccombat()                   #on lance la fonction pour selectioné un ennemi a la souris
     mort_affichage()
     fenetre.blit(fond, (0,0))
     fenetre.blit(sperso1, position_perso1)
