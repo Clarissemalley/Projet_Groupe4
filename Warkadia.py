@@ -432,7 +432,7 @@ def combatperso4(): #lance la fonction de combat entre le personnage 4 et l'enne
                     if list_mechant[curseur.collidelist(list_mechant)].colliderect(position_perso4.inflate(5,5)):
                         degats(listperso4, list_statsmechant[curseur.collidelist(list_mechant)])
                         listperso4[2]=0
-def mechant1(): #Rassemble les différentes actions que l'ennemi 1 effectura pendant son tour
+def mechant1(): #Rassemble les differentes actions que l'ennemi 1 effectura pendant son tour
     global position_mechant1
     global numperso
     list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
@@ -455,7 +455,7 @@ def mechant1(): #Rassemble les différentes actions que l'ennemi 1 effectura pen
             listmechant1[2]=listmechant1[2]-1
     numperso=numperso+1
 
-def mechant2(): #Rassemble les différentes actions que l'ennemi 2 effectura pendant son tour
+def mechant2(): #Rassemble les differentes actions que l'ennemi 2 effectura pendant son tour
     global position_mechant2
     global numperso
     list_perso = [position_perso1, position_perso2, position_perso3, position_perso4]
@@ -505,16 +505,16 @@ def mechant3(): #Rassemble les différentes actions que l'ennemi 3 effectura pen
 
 #</fonctions>
 while continuer :
-    for event in pygame.event.get():        #on parcours la liste de tous les évenements reçus
+    for event in pygame.event.get():        #on parcours la liste de tous les evenements reçus
         if event.type == KEYDOWN:
             if event.type == QUIT:              #si un de ces evenements est de type QUIT
-                continuer = 0            #on arrête la boucle
+                continuer = 0            #on arrete la boucle
             if event.key == K_ESCAPE :  #Appuyer sur "ECHAP" arrete la boucle
                 continuer = 0
             if event.key == K_F11 :
                 pygame.display.toggle_fullscreen()
             selecperso()
-        if event.type == MOUSEBUTTONDOWN:   #Dès qu'un bouton de la souris est pressé,
+        if event.type == MOUSEBUTTONDOWN:   #Des qu'un bouton de la souris est presse,
             seleccombat()                   #on lance la fonction pour selectioné un ennemi a la souris
     mort_affichage()
     fenetre.blit(fond, (0,0))
