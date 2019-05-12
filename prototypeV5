@@ -35,11 +35,11 @@ smechant1 = pygame.image.load("Draugr.gif").convert_alpha()
 position_mechant1 = smechant1.get_rect()
 position_mechant1 = position_mechant1.move(9*128,1*128)
 
-smechant2 = pygame.image.load("Draugr.gif").convert_alpha()
+smechant2 = pygame.image.load("Satyre.gif").convert_alpha()
 position_mechant2 = smechant2.get_rect()
 position_mechant2 = position_mechant2.move(9*128,3*128)
 
-smechant3 = pygame.image.load("Draugr.gif").convert_alpha()
+smechant3 = pygame.image.load("Kappa.gif").convert_alpha()
 position_mechant3 = smechant3.get_rect()
 position_mechant3 = position_mechant3.move(9*128,5*128)
 
@@ -59,8 +59,8 @@ listperso2=[16,16,4,4,5,75,50,3,20]
 listperso3=[10,10,6,6,3,80,65,0,30]
 listperso4=[12,12,5,5,4,75,75,1,30]
 listmechant1=[5,5,4,4,3,80,90,0,20]
-listmechant2=[5,5,4,4,3,80,90,0,20]
-listmechant3=[5,5,4,4,3,80,90,0,20]
+listmechant2=[10,10,5,5,5,70,50,0,25]
+listmechant3=[12,12,3,3,3,65,40,1,15]
 
 black = pygame.Color(0,0,0)
 font = pygame.font.SysFont("arial", 25)
@@ -132,8 +132,8 @@ def interface(a):
     fenetre.blit(statsbd2,(10*128-70,4*128+25))
     fenetre.blit(statsbd3,(10*128-70,4*128+50))
     fenetre.blit(pvmechant1,(0*128,0*128))
-    fenetre.blit(pvmechant2,(2*128,0*128))
-    fenetre.blit(pvmechant3,(4*128,0*128))
+    fenetre.blit(pvmechant2,(1*128,0*128))
+    fenetre.blit(pvmechant3,(2*128,0*128))
     fenetre.blit(pointeur,position_pointeur)
 
 def degats(Att, Def):   #Permet de calculer les degats au Defenseur(Def) au terme de son combat contre l'Attaquant(Att)
